@@ -18,32 +18,12 @@ ActiveRecord::Schema.define(version: 20160218102818) do
     t.text     "content",     null: false
     t.integer  "category_id"
     t.datetime "start_date"
-    t.datetime "expire_date", null: false
+    t.datetime "expire_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "results", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "scores", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "english",    null: false
-    t.integer  "math",       null: false
-    t.integer  "japanese",   null: false
-    t.integer  "science",    null: false
-    t.integer  "social",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "date"
-  end
-
-  create_table "teaches", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
