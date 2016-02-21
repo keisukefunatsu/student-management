@@ -65,7 +65,7 @@
     <div class="row">
       <div class="col-md-3">
         <p>
-          <%= current_user.name + 'さん' %>
+          <%= current_user.name  %>
         </p>
         <ul class="nav nav-pills nav-stacked">
           <li class=" <%= active?("home","information") %> "><%= link_to 'お知らせ', root_path, class: '' %></li>

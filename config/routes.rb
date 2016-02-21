@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
 
   resources :results
-  resources :teaches
-  resources :scores
   resources :information
   root to: 'home#index'
   get 'home/index'
