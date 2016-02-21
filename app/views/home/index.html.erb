@@ -1,0 +1,31 @@
+  <div class="col-md-8">
+    <% if current_user %>
+      <h1>お知らせ</h1>
+      <hr>
+      <%= paginate @info %>
+      <% @info.each do |e| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= link_to(e) do %>
+          <%= e.title %>
+          <% end %>
+          <%= '　　作成日　' + e.created_at.strftime('%Y年%m月%d日 %H:%M')  %>
+        </div>
+        <div class="panel-body">
+          <%= e.content %>
+          <% if current_user.admin? %>
+            <br><hr>
+            <%= link_to '編集', edit_information_path(e),class: 'btn btn-success' %>
+            <%= link_to '削除', information_path(e),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'} %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+    <h1>生徒専用ページ</h1>
+      <p>
+      まずは以下のリンクからログインして下さい
+      </p>
+      <%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2),class:'btn btn-info' %>
+    <% end %>
+  </div>

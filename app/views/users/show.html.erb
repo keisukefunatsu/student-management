@@ -1,0 +1,35 @@
+
+<div class="col-md-8">
+
+  <h1>登録情報</h1>
+  <hr>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <%= '氏名：' + @user.name %>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item"><%= 'メール：' + @user.email %></li>
+      <li class="list-group-item"><%= '最近のログイン：' + @user.current_sign_in_at.strftime('%Y年%m月%d日 %H:%M') %></li>
+    </ul>
+    <div class="panel-body">
+      直近の指導報告
+      <hr>
+    <% if @user.results.last %>
+      <h3><%= @user.results.last.title %></h3>
+      <p>
+        <%= @user.results.last.content %>
+      </p>
+
+    <% else %>
+      指導報告はありません
+    <% end %>
+    </div>
+
+
+
+
+  </div>
+
+  <%= link_to '過去の指導情報',result_path, class:'btn btn-info' %>
+
+</div>
