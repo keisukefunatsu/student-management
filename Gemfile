@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'

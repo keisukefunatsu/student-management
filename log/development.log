@@ -2462,3 +2462,12 @@ Processing by UsersController#index as HTML
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" LIMIT 5 OFFSET 0[0m
   Rendered users/index.html.erb within layouts/application (6.4ms)
 Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-23 20:43:38 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (2.3ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  Rendered home/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 73ms (Views: 67.1ms | ActiveRecord: 5.0ms)
