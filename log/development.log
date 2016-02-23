@@ -1950,3 +1950,410 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" LIMIT 5 OFFSET 0
   Rendered users/index.html.erb within layouts/application (6.1ms)
 Completed 200 OK in 71ms (Views: 63.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 12:47:33 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (1.3ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  Rendered home/index.html.erb within layouts/application (123.1ms)
+Completed 200 OK in 623ms (Views: 600.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-02-22 12:47:34 +0900
+
+
+Started GET "/information/1/edit" for 127.0.0.1 at 2016-02-22 12:47:37 +0900
+Processing by InformationController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInformation Load (0.2ms)[0m  SELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered information/edit.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 119ms (Views: 102.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/information/1" for 127.0.0.1 at 2016-02-22 12:47:38 +0900
+Processing by InformationController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cm+N+a44+2mGiV+4U+wTY/a9iyRMKWwyGHJqY5tQlU5DsufqwKrtaf+iRF79qPY10W0QSaDWMl3Kvsi8ziZL0A==", "information"=>{"title"=>"what's up people", "content"=>"hello friends", "expire_date(1i)"=>"2016", "expire_date(2i)"=>"2", "expire_date(3i)"=>"22", "expire_date(4i)"=>"03", "expire_date(5i)"=>"47"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mInformation Load (0.1ms)[0m  SELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 12:47:39 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "information"
+  [1m[36mInformation Load (0.2ms)[0m  [1mSELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0[0m
+  Rendered home/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 97ms (Views: 96.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/information/1/edit" for 127.0.0.1 at 2016-02-22 12:47:40 +0900
+Processing by InformationController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInformation Load (0.0ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered information/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 95ms (Views: 91.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/information/1" for 127.0.0.1 at 2016-02-22 12:47:42 +0900
+Processing by InformationController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjFMOuspQGkNnv7e8g0VyFV6yka0uHO0VjiDaZdMfCU37CYphbtWaXS15ThcSfCecqpRK1hHLduE9CG2wjqiuw==", "information"=>{"title"=>"what's up people", "content"=>"hello friends", "expire_date(1i)"=>"2016", "expire_date(2i)"=>"2", "expire_date(3i)"=>"22", "expire_date(4i)"=>"03", "expire_date(5i)"=>"47"}, "commit"=>"更新", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInformation Load (0.1ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 12:47:42 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.4ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  Rendered home/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 92ms (Views: 86.1ms | ActiveRecord: 0.8ms)
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (3.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20160216073857)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (7.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (9.8ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160216073857"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+Migrating to AddOmniauthToUsers (20160216073903)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "uid" character varying
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "token" character varying
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160216073903"]]
+  [1m[35m (1.5ms)[0m  COMMIT
+Migrating to AddAdminToUsers (20160216075537)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "admin" boolean
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160216075537"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreateInformation (20160217143213)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (10.3ms)[0m  CREATE TABLE "information" ("id" serial primary key, "title" character varying NOT NULL, "content" text NOT NULL, "category_id" integer, "start_date" timestamp, "expire_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160217143213"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Migrating to ChangeAdminOfUsers (20160218090944)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ALTER COLUMN "admin" TYPE boolean
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ALTER COLUMN "admin" SET DEFAULT 'f'[0m
+  [1m[35m (1.6ms)[0m  UPDATE "users" SET "admin"='f' WHERE "admin" IS NULL
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ALTER "admin" SET NOT NULL[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160218090944"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateResults (20160218102818)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (20.2ms)[0m  [1mCREATE TABLE "results" ("id" serial primary key, "user_id" integer, "title" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160218102818"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'information'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'results'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-23 13:18:09 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 399ms (Views: 376.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-23 13:18:14 +0900
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-02-23 13:18:16 +0900
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-02-23 13:18:16 +0900
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-23 13:18:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 161ms (Views: 113.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-23 13:18:27 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u0/e/aGe0BXuD8vJZ5U1ns9GRQGMI/ErRhvMRJNTfDLLeV4OyOP0rh+ovZ8/h6slyjWw1savKChzw9bdJmYgOA==", "user"=>{"email"=>"okusama_3@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (3.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "okusama_3@hotmail.com"]]
+Completed 401 Unauthorized in 46ms (ActiveRecord: 8.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u0/e/aGe0BXuD8vJZ5U1ns9GRQGMI/ErRhvMRJNTfDLLeV4OyOP0rh+ovZ8/h6slyjWw1savKChzw9bdJmYgOA==", "user"=>{"email"=>"okusama_3@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 153ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-23 13:18:30 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/registrations/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 145ms (Views: 140.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-23 13:18:36 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PfutOqgmB3YJzvSfRT7XTKjdcuF2lmwKxqpVV+Z/EPlNzS3JwVsjzfhpgskdLEn3ra6HNjwatQnzck/OU0pM8w==", "user"=>{"email"=>"okusama_3@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'okusama_3@hotmail.com' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "okusama_3@hotmail.com"], ["encrypted_password", "$2a$10$ZnCMa2uocVKScF/rFTJDMu8GZc3eLroGfABib.ymKer0v6dQgvXnu"], ["created_at", "2016-02-23 13:18:36.276140"], ["updated_at", "2016-02-23 13:18:36.276140"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-02-23 13:18:36.282825"], ["current_sign_in_at", "2016-02-23 13:18:36.282825"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-02-23 13:18:36.286422"], ["id", 1]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 150ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-23 13:18:36 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (1.3ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  Rendered home/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 106ms (Views: 98.9ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/results/1" for 127.0.0.1 at 2016-02-23 13:18:38 +0900
+Processing by ResultsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered results/show.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (no implicit conversion of nil into String):
+    1: 
+    2: <div class="col-md-8">
+    3: 
+    4:   <h1>指導報告<%= '  ('+ @user.name + 'さん)' %></h1>
+    5:   <hr>
+    6:   <%= paginate @result %>
+    7: 
+  app/views/results/show.html.erb:4:in `+'
+  app/views/results/show.html.erb:4:in `_app_views_results_show_html_erb__2962252099815692886_47358602759240'
+
+
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.9ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (64.8ms)
+
+
+Started GET "/results/1" for 127.0.0.1 at 2016-02-23 13:18:38 +0900
+Processing by ResultsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered results/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (no implicit conversion of nil into String):
+    1: 
+    2: <div class="col-md-8">
+    3: 
+    4:   <h1>指導報告<%= '  ('+ @user.name + 'さん)' %></h1>
+    5:   <hr>
+    6:   <%= paginate @result %>
+    7: 
+  app/views/results/show.html.erb:4:in `+'
+  app/views/results/show.html.erb:4:in `_app_views_results_show_html_erb__2962252099815692886_70337424661720'
+
+
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.6ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.1ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.1ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (90.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "admin"], ["updated_at", "2016-02-23 13:20:14.853378"], ["id", 1]]
+  [1m[35m (3.4ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "admin" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["admin", "t"], ["updated_at", "2016-02-23 13:20:27.622268"], ["id", 1]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/results/1" for 127.0.0.1 at 2016-02-23 13:21:26 +0900
+Processing by ResultsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "results" WHERE "results"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mResult Load (0.4ms)[0m  SELECT  "results".* FROM "results" WHERE "results"."user_id" = $1  ORDER BY created_at DESC LIMIT 4 OFFSET 0  [["user_id", 1]]
+  Rendered results/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 62ms (Views: 45.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-02-23 13:21:27 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mResult Load (0.2ms)[0m  [1mSELECT  "results".* FROM "results" WHERE "results"."user_id" = $1  ORDER BY "results"."id" DESC LIMIT 1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 59ms (Views: 45.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-23 13:21:28 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.9ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  Rendered home/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 58ms (Views: 53.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/results/1" for 127.0.0.1 at 2016-02-23 13:21:29 +0900
+Processing by ResultsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "results" WHERE "results"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mResult Load (0.6ms)[0m  SELECT  "results".* FROM "results" WHERE "results"."user_id" = $1  ORDER BY created_at DESC LIMIT 4 OFFSET 0  [["user_id", 1]]
+  Rendered results/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 56ms (Views: 43.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-02-23 13:21:30 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (4.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mResult Load (1.3ms)[0m  [1mSELECT  "results".* FROM "results" WHERE "results"."user_id" = $1  ORDER BY "results"."id" DESC LIMIT 1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 65ms (Views: 50.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-23 13:21:31 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (1.2ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  Rendered home/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 64ms (Views: 59.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-23 13:21:33 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "information"
+  [1m[36mInformation Load (0.5ms)[0m  [1mSELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0[0m
+  Rendered home/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 76ms (Views: 73.3ms | ActiveRecord: 2.2ms)
