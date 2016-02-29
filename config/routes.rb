@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :results
   resources :information
   root to: 'home#index'
-  get 'home/index'
   get '/logout' => 'sessions#destroy'
+  resources :admin
+
 
   devise_for :users, controllers: {
    omniauth_callbacks: "users/omniauth_callbacks"
