@@ -1,8 +1,10 @@
 class TicketsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :admin_user, except: [:create,:destroy,:new]
   def index
     @info = Information.find(params[:information_id])
     @tickets = @info.tickets
-  
+
   end
   def new
     raise ApplicationController::RoutingError,'申し訳ありません、ログインしてからお申し込みください。'
@@ -14,9 +16,10 @@ class TicketsController < ApplicationController
       t.comment = params[:ticket][:comment]
     end
     if ticket.save
-      redirect_to root_path, flash[:notice] = '参加登録しました'
+      flash[:notice] = '参加登録しました'
+      head 201
     else
-      redirect_to root_path
+      render json: {messages: ticket.errors.full_messages},status: 422
     end
   end
 

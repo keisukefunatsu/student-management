@@ -24043,3 +24043,805 @@ Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f4
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:07:00 +0900
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:16:00 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "information"
+  [1m[36mInformation Load (0.2ms)[0m  [1mSELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0[0m
+  Rendered home/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 109ms (Views: 107.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.2ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  Rendered home/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 65ms (Views: 62.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/tickets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/tickets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:16:05 +0900
+
+
+Started GET "/results/1" for 127.0.0.1 at 2016-03-01 16:16:51 +0900
+Processing by ResultsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "results" WHERE "results"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mResult Load (0.2ms)[0m  SELECT  "results".* FROM "results" WHERE "results"."user_id" = ?  ORDER BY created_at DESC LIMIT 4 OFFSET 0  [["user_id", 1]]
+  Rendered results/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 82ms (Views: 73.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:16:55 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "information"
+  [1m[36mInformation Load (0.2ms)[0m  [1mSELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0[0m
+  Rendered home/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 95ms (Views: 92.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.2ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 4]]
+  [1m[35mTicket Load (0.3ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/tickets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:08 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/tickets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:09 +0900
+
+
+Started GET "/information/3/tickets" for 127.0.0.1 at 2016-03-01 16:18:12 +0900
+Processing by TicketsController#index as HTML
+  Parameters: {"information_id"=>"3"}
+  [1m[36mInformation Load (0.6ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTicket Load (1.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  [["information_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tickets/index.html.erb within layouts/application (5.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 73ms (Views: 61.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/information/3/tickets" for 127.0.0.1 at 2016-03-01 16:18:23 +0900
+Processing by TicketsController#index as HTML
+  Parameters: {"information_id"=>"3"}
+  [1m[36mInformation Load (0.1ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  [["information_id", 3]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tickets/index.html.erb within layouts/application (9.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 86ms (Views: 83.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "information"
+  [1m[36mInformation Load (1.1ms)[0m  [1mSELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mTicket Load (0.6ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 4]]
+  [1m[36mTicket Load (2.0ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 103ms (Views: 98.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/tickets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:38 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/tickets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:18:39 +0900
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-03-01 16:19:04 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mResult Load (1.5ms)[0m  [1mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ?  ORDER BY "results"."id" DESC LIMIT 1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 81ms (Views: 75.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/results/1" for 127.0.0.1 at 2016-03-01 16:19:06 +0900
+Processing by ResultsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "results" WHERE "results"."user_id" = ?  [["user_id", 1]]
+  [1m[36mResult Load (0.1ms)[0m  [1mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ?  ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m  [["user_id", 1]]
+  Rendered results/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:19:06 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.2ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 4]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 69ms (Views: 67.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/information/new" for 127.0.0.1 at 2016-03-01 16:19:12 +0900
+Processing by InformationController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered information/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 83ms (Views: 78.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/information" for 127.0.0.1 at 2016-03-01 16:19:40 +0900
+Processing by InformationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lgFL7wlBWBI+yo0NfKDY/p3JZYkr6+R74LrZUOmJQv8gp5AI9dcSCpt63NKxoroEPzH0mIXkggChjuPwcjOojg==", "information"=>{"title"=>"お疲れ様会", "content"=>"お疲れ様でした。\r\n美味しいお菓子を食べながらいろいろお話をしましょう", "expire_date(1i)"=>"2016", "expire_date(2i)"=>"3", "expire_date(3i)"=>"1", "expire_date(4i)"=>"16", "expire_date(5i)"=>"19", "participate"=>"1"}, "commit"=>"作成"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "information" ("title", "content", "participate", "expire_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "お疲れ様会"], ["content", "お疲れ様でした。\r\n美味しいお菓子を食べながらいろいろお話をしましょう"], ["participate", "t"], ["expire_date", "2016-03-01 16:19:00.000000"], ["created_at", "2016-03-01 16:19:40.344840"], ["updated_at", "2016-03-01 16:19:40.344840"]]
+  [1m[36m (5.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 19ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:19:40 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.5ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 5]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 4]]
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 94ms (Views: 91.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/information/5/edit" for 127.0.0.1 at 2016-03-01 16:19:44 +0900
+Processing by InformationController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInformation Load (0.1ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered information/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/information/5" for 127.0.0.1 at 2016-03-01 16:19:45 +0900
+Processing by InformationController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5IQOjxxRKTQk3vMsIA+JL5M4XrRgUzLPX5YUlVLXUHtSItVo4MdjLIFuovPtDevVMcDPpc5cVLQeoi41yW26Cg==", "information"=>{"title"=>"お疲れ様会", "content"=>"お疲れ様でした。\r\n美味しいお菓子を食べながらいろいろお話をしましょう", "expire_date(1i)"=>"2016", "expire_date(2i)"=>"3", "expire_date(3i)"=>"1", "expire_date(4i)"=>"16", "expire_date(5i)"=>"19", "participate"=>"1"}, "commit"=>"更新", "id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInformation Load (0.1ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:19:45 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.7ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 5]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 4]]
+  [1m[36mTicket Load (0.8ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 91ms (Views: 84.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/information/4/edit" for 127.0.0.1 at 2016-03-01 16:19:47 +0900
+Processing by InformationController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInformation Load (0.2ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered information/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 93ms (Views: 90.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/information/4" for 127.0.0.1 at 2016-03-01 16:19:49 +0900
+Processing by InformationController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AUUyHjiJwA1fXzoBe0x2ly4tDGeXOjmnYNrnCQm07fO34+n5xB+KFfrva962ThRtjNWddjk1X9wh7t2pkg4Hgg==", "information"=>{"title"=>"fdfsd", "content"=>"fdsfsfdsfs", "expire_date(1i)"=>"2016", "expire_date(2i)"=>"3", "expire_date(3i)"=>"1", "expire_date(4i)"=>"13", "expire_date(5i)"=>"41", "participate"=>"1"}, "commit"=>"更新", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mInformation Load (0.1ms)[0m  [1mSELECT  "information".* FROM "information" WHERE "information"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:19:49 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.2ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 5]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 4]]
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 99ms (Views: 94.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.8ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.9ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 5]]
+  [1m[35mTicket Load (0.5ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 4]]
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (118.8ms)
+Completed 200 OK in 205ms (Views: 179.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/tickets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/tickets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:21:29 +0900
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:26:55 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.4ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 5]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 4]]
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (104.8ms)
+Completed 200 OK in 486ms (Views: 478.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/tickets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/tickets.self-5c8924e7e9990ecaf382bc99f5b15f9732ffd5af6ed08c04f50196ca5bd35242.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:26:56 +0900
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:27:00 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (1.5ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 5]]
+  [1m[35mTicket Load (1.6ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1  [["information_id", 4]]
+  [1m[36mTicket Load (0.4ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  ORDER BY "tickets"."id" ASC LIMIT 1[0m  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 111ms (Views: 104.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2016-03-01 16:27:06 +0900
+Processing by SessionsController#destroy as HTML
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:27:06 +0900
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-03-01 16:27:15 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/pyon/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 65ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-03-01 16:27:17 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VH1YI+ui3attxXB28KDra+9zw4l+BZQy5kgDWXU7Q8XYGk3O25CI+ntTYywrxIxcM0d5nRTcBJbzvUX9F+TCXg==", "user"=>{"email"=>"okusama_3@hotmail.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "okusama_3@hotmail.co"]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-03-01 16:27:17.451330"], ["sign_in_count", 2], ["updated_at", "2016-03-01 16:27:17.456575"], ["id", 2]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 172ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:27:17 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.2ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 5 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mTicket Load (0.8ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 4 LIMIT 1  [["user_id", 2]]
+  [1m[36mTicket Load (1.3ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 3 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mTicket Load (0.5ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 106ms (Views: 100.7ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/information/5/tickets" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+Processing by TicketsController#create as JS
+  Parameters: {"utf8"=>"✓", "ticket"=>{"comment"=>""}, "button"=>"", "information_id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tickets" ("user_id", "information_id", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["information_id", 5], ["comment", ""], ["created_at", "2016-03-01 16:27:25.103149"], ["updated_at", "2016-03-01 16:27:25.103149"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+Completed 201 Created in 17ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "information"
+  [1m[36mInformation Load (0.2ms)[0m  [1mSELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mTicket Load (0.3ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 5 LIMIT 1  [["user_id", 2]]
+  [1m[36mTicket Load (1.5ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?[0m  [["information_id", 5]]
+  [1m[35mTicket Load (0.8ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 4 LIMIT 1  [["user_id", 2]]
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 3 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (65.2ms)
+Completed 200 OK in 137ms (Views: 120.8ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/tickets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/tickets.self-5c8924e7e9990ecaf382bc99f5b15f9732ffd5af6ed08c04f50196ca5bd35242.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:25 +0900
+
+
+Started DELETE "/information/5/tickets/%23%3CTicket::ActiveRecord_Associations_CollectionProxy:0x007fd1464898f0%3E" for 127.0.0.1 at 2016-03-01 16:27:34 +0900
+Processing by TicketsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DkV4LFitCk/ORsWiuOzpvqCrUQhlgOm7AImL0AOJF/SWlthBJK7afdv3+WDDcQSJ7wXOsU8w8cBdOKlwe06R3A==", "information_id"=>"5", "id"=>"#<Ticket::ActiveRecord_Associations_CollectionProxy:0x007fd1464898f0>"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTicket Load (0.3ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = ? LIMIT 1  [["user_id", 2], ["information_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.5ms)[0m  DELETE FROM "tickets" WHERE "tickets"."id" = ?  [["id", 5]]
+  [1m[36m (13.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 44ms (ActiveRecord: 25.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:27:34 +0900
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "information"[0m
+  [1m[35mInformation Load (0.3ms)[0m  SELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 5 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 4 LIMIT 1  [["user_id", 2]]
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 3 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mTicket Load (0.0ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 92ms (Views: 82.4ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/information/5/tickets" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+Processing by TicketsController#create as JS
+  Parameters: {"utf8"=>"✓", "ticket"=>{"comment"=>"さんかしてみたいなぁ"}, "button"=>"", "information_id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tickets" ("user_id", "information_id", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["information_id", 5], ["comment", "さんかしてみたいなぁ"], ["created_at", "2016-03-01 16:27:55.064459"], ["updated_at", "2016-03-01 16:27:55.064459"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+Completed 201 Created in 16ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "information"
+  [1m[36mInformation Load (0.5ms)[0m  [1mSELECT  "information".* FROM "information"  ORDER BY updated_at DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mTicket Load (0.1ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 5 LIMIT 1  [["user_id", 2]]
+  [1m[36mTicket Load (0.4ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?[0m  [["information_id", 5]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 4 LIMIT 1  [["user_id", 2]]
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."user_id" = ? AND "tickets"."information_id" = 3 LIMIT 1[0m  [["user_id", 2]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."information_id" = ?  [["information_id", 3]]
+  Rendered home/index.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 120ms (Views: 116.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/tickets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/results.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/bootstrap.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/information.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/information.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/tickets.self-5c8924e7e9990ecaf382bc99f5b15f9732ffd5af6ed08c04f50196ca5bd35242.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/results.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-03-01 16:27:55 +0900
