@@ -17,6 +17,34 @@
             <br><hr>
             <%= link_to '編集', edit_information_path(e),class: 'btn btn-success' %>
             <%= link_to '削除', information_path(e),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'} %>
+            <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary'%>
+          <% elsif e.participate && current_user.tickets.find_by(information_id: e)%>
+
+            <%= link_to '参加をキャンセルする', information_ticket_path(e, e.tickets(current_user)), method: :delete, class:'btn btn-warning' %>
+          <% elsif e.participate %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTicket">
+            参加する
+          </button>
+          <div class="modal fade" id="createTicket" tabindex="-1" role="dialog" aria-labelledby="dialogHeader" aria-hidden="true">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="dialogHeader"> comment</h4>
+                </div>
+                <%= form_for(e.tickets.build, url:information_tickets_path(e),remote:true) do |f| %>
+                  <div class="modal-body">
+                    <%= f.text_field :comment, class: 'form-control' %>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                    <%= f.button 'submit', class: 'btn btn-primary', data: {disable_with:'処理中です....'} %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
           <% end %>
         </div>
       </div>

@@ -29,6 +29,10 @@
     <%= f.label '掲載期限' %>
     <%= f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1 %>
     </div>
+    <div class="form-group">
+    <%= f.label '参加するか尋ねる' %>
+    <%= f.check_box_tag :participate, true, true)%>
+    </div>
     <%= f.submit '作成',class: 'btn btn-default', data: {disable_with:'作成しています...'}  %>
   <% end %>
 </div>

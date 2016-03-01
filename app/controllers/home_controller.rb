@@ -3,5 +3,6 @@ class HomeController < ApplicationController
    PER = 5
   def index
     @info = Information.page(params[:page]).per(PER).all.order('updated_at DESC')
+    
   end
 end

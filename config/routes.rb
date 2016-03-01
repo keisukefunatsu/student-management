@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :results
   end
+
+  resources :information do
+    resources :tickets
+  end
 end

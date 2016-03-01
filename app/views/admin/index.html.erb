@@ -12,8 +12,6 @@
         <td></td>
         </tr>
       <% @user.each do |e| %>
-
-
         <td><%= e.name %></td>
         <td><%= link_to '登録内容確認' , user_path(e), class:'btn btn-warning btn-sm'%></td>
         <td><%= link_to '指導情報登録',new_result_path(e), class:'btn btn-primary btn-sm' %></td>

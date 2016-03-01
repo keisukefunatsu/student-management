@@ -11,17 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218102818) do
+ActiveRecord::Schema.define(version: 20160301040129) do
 
   create_table "information", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.text     "content",     null: false
+    t.string   "title",                   null: false
+    t.text     "content",                 null: false
     t.integer  "category_id"
     t.datetime "start_date"
     t.datetime "expire_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.boolean  "participate"
+    t.integer  "user_id",     default: 1
   end
+
+  add_index "information", ["user_id"], name: "index_information_on_user_id"
 
   create_table "results", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,6 +34,20 @@ ActiveRecord::Schema.define(version: 20160218102818) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "information_id", null: false
+    t.string   "comment"
+    t.string   "comment2"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "tickets", ["information_id", "user_id"], name: "index_tickets_on_information_id_and_user_id", unique: true
+  add_index "tickets", ["information_id"], name: "index_tickets_on_information_id"
+  add_index "tickets", ["user_id", "information_id"], name: "index_tickets_on_user_id_and_information_id", unique: true
+  add_index "tickets", ["user_id"], name: "index_tickets_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
