@@ -19,7 +19,10 @@
             <%= link_to '削除', information_path(e),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'} %>
             <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary'%>
           <% elsif e.participate && current_user.tickets.find_by(information_id: e)%>
-
+            <hr>
+            <p>
+              このイベントに参加登録済みです。キャンセルする場合は以下のボタンを押してください。
+            </p>
             <%= link_to '参加をキャンセルする', information_ticket_path(e, e.tickets(current_user)), method: :delete, class:'btn btn-warning' %>
           <% elsif e.participate %>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTicket">
