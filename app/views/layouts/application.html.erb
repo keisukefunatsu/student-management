@@ -4,6 +4,8 @@
   <title>個別指導コミット</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -64,13 +66,22 @@
     <% if current_user %>
     <div class="row">
       <div class="col-md-3">
-        <p>
-          <%= current_user.name  %>
-        </p>
         <ul class="nav nav-pills nav-stacked">
-          <li class=" <%= active?("home","information") %> "><%= link_to 'お知らせ', root_path, class: '' %></li>
-          <li class=" <%= active?("results") %> "><%= link_to '指導報告', result_path(current_user), class: ''%></li>
-          <li class=" <%= active?("users") %> "><%= link_to '登録情報', user_path(current_user) , class: ''%></li>
+          <li class=" <%= active?("home","information") %> ">
+            <%= link_to root_path, class:'' do %>
+              <i class="zmdi zmdi-info-outline"></i>&nbsp;&nbsp;お知らせ
+            <% end %>
+          </li>
+          <li class=" <%= active?("results") %> ">
+            <%= link_to result_path(current_user), class: '' do %>
+            <i class="zmdi zmdi-file-text"></i>&nbsp;&nbsp;指導報告
+            <% end %>
+          </li>
+          <li class=" <%= active?("users") %> ">
+            <%= link_to  user_path(current_user) , class: '' do %>
+            <i class="zmdi zmdi-account"></i>&nbsp;&nbsp;登録情報
+            <% end %>
+          </li>
         </ul>
       </div>
     <% else %>

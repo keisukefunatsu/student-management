@@ -1,18 +1,17 @@
 
   <div class="col-md-8">
     <h1>
-      イベント内容：
       <%= @info.title %>
     </h1>
     <% @tickets.each do |e| %>
     <hr>
-    <p>
+    <h3>
       参加者
       <%= User.find(e.user_id).name %>
-    </p>
-    <p>
+    </h3>
+    <h3>
       コメント
-    </p>
+    </h3>
     <p>
       <%= e.comment %>
     </p>
