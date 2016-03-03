@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160303044846) do
     t.string   "grade"
     t.string   "school_name"
     t.string   "phone_number"
+    t.boolean  "confirmed"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

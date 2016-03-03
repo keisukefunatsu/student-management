@@ -1,5 +1,6 @@
   <div class="col-md-8">
     <% if current_user %>
+      <% if current_user.confirmed? %>
       <h1>お知らせ</h1>
       <hr>
       <%= paginate @info %>
@@ -20,7 +21,6 @@
             <% if e.tickets.first%>
               <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary'%>
             <% end %>
-
           <% elsif e.participate && current_user.tickets.find_by(information_id: e)%>
             <hr>
             <p>
@@ -56,8 +56,12 @@
         </div>
       </div>
       <% end %>
+      <% else %>
+        <p>
+           このアカウントは承認待ちです 
+        </p>
+      <% end %>
     <% else %>
-    <h1>生徒専用ページ</h1>
       <p>
       まずは以下のリンクからログインして下さい
       </p>

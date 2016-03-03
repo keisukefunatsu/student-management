@@ -16,6 +16,10 @@
       </div>
     <% end %>
     <div class="form-group">
+      <%= f.label '生徒として承認する' %>
+      <%= f.check_box :confirmed,{checked: true}%>
+    </div>
+    <div class="form-group">
       <%= f.label '学年' %>
       <%= f.select(:grade, ["中１","中2","中3","高１","高2","高3"], {class: 'form-control'} )%>
     </div>

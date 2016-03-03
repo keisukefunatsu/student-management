@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 before_action :authenticate_user!
+before_action :confirmed_user
 before_action :admin_user, except: [:show]
   def show
       @user = current_user
@@ -18,11 +19,14 @@ before_action :admin_user, except: [:show]
     end
   end
 
+  def destroy
+
+  end
   private
 
   def user_params
     params.require(:user).permit(
-      :grade, :school_name, :phone_number
+      :grade, :school_name, :phone_number, :confirmed
     )
   end
 end

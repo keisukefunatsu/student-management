@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!
+  before_action :confirmed_user
   before_action :admin_user, except: [:create,:destroy,:new]
   def index
     @info = Information.find(params[:information_id])

@@ -1,6 +1,7 @@
 class ResultsController < ApplicationController
-before_action :authenticate_user!
-before_action :admin_user, except: [:show]
+  before_action :authenticate_user!
+  before_action :confirmed_user
+  before_action :admin_user, except: [:show]
   PER = 4
   def new
     @user = User.find(params[:format])
