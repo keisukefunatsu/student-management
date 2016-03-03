@@ -5,7 +5,6 @@ class TicketsController < ApplicationController
   def index
     @info = Information.find(params[:information_id])
     @tickets = @info.tickets
-
   end
   def new
     raise ApplicationController::RoutingError,'申し訳ありません、ログインしてからお申し込みください。'

@@ -21,6 +21,10 @@
             <% if e.tickets.first%>
               <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary'%>
             <% end %>
+            <% if e.participate? %>
+                申し込み期限&nbsp;&nbsp;&nbsp;<%= e.expire_date.strftime('%Y年%m月%d日') %>
+            <% end %>
+
           <% elsif e.participate && current_user.tickets.find_by(information_id: e)%>
             <hr>
             <p>
@@ -32,6 +36,7 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTicket">
             参加する
           </button>
+          申し込み期限<%= e.expire_date %>
           <div class="modal fade" id="createTicket" tabindex="-1" role="dialog" aria-labelledby="dialogHeader" aria-hidden="true">
             <div class="modal-dialog">
 

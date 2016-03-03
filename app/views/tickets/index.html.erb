@@ -1,19 +1,23 @@
 
   <div class="col-md-8">
-    <h1>
+    <h2>
       <%= @info.title %>
-    </h1>
+    </h2>
     <% @tickets.each do |e| %>
     <hr>
-    <h3>
-      参加者
-      <%= User.find(e.user_id).name %>
-    </h3>
-    <h3>
-      コメント
-    </h3>
-    <p>
-      <%= e.comment %>
-    </p>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"> <%= '参加者氏名:    ' + User.find(e.user_id).name %>
+      </div>
+      <div class="panel-body">
+        <p>
+          コメント
+        </p>
+        <p>
+          <%= e.comment %>
+        </p>
+
+      </div>
+    </div>
     <% end %>
   </div>

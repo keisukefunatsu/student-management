@@ -75,25 +75,27 @@
 
             </p>
             <p class="text-muted">
+              <i class="zmdi zmdi-key"></i>
               <%= current_user.name %>
             </p>
+            <br>
           </div>
         </div>
 
         <ul class="nav nav-pills nav-stacked">
           <li class=" <%= active?("home","information") %> ">
             <%= link_to root_path, class:'' do %>
-              <i class="zmdi zmdi-info-outline"></i>&nbsp;&nbsp;お知らせ
+              <i class="zmdi zmdi-info-outline zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;お知らせ
             <% end %>
           </li>
           <li class=" <%= active?("results") %> ">
             <%= link_to result_path(current_user), class: '' do %>
-            <i class="zmdi zmdi-file-text"></i>&nbsp;&nbsp;指導報告
+            <i class="zmdi zmdi-file-text zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;指導報告
             <% end %>
           </li>
           <li class=" <%= active?("users") %> ">
             <%= link_to  user_path(current_user) , class: '' do %>
-            <i class="zmdi zmdi-account"></i>&nbsp;&nbsp;登録情報
+            <i class="zmdi zmdi-account zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;イベント・登録情報
             <% end %>
           </li>
         </ul>

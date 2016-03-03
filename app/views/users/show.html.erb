@@ -1,8 +1,18 @@
 
 <div class="col-md-8">
 
-  <h1>登録情報</h1>
+  <h1>イベント参加情報・登録情報</h1>
   <hr>
+  <h2>参加申し込み中のイベント</h2>
+  <% @user.tickets.each do |e| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= e.information.title %>
+    </div>
+  </div>
+  <% end %>
+  <hr>
+  <h2>登録情報</h2>
   <div class="panel panel-info">
     <div class="panel-heading">
       <%= '氏名：' + @user.name %>
@@ -24,10 +34,6 @@
       指導報告はありません
     <% end %>
     </div>
-
-
-
-
   </div>
 
   <%= link_to '過去の指導情報',result_path, class:'btn btn-info' %>
