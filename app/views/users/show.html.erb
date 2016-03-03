@@ -1,18 +1,19 @@
 
 <div class="col-md-8">
 
-  <h1>イベント参加情報・登録情報</h1>
-  <hr>
   <h2>参加申し込み中のイベント</h2>
+  <hr>
   <% @user.tickets.each do |e| %>
   <div class="panel panel-default">
     <div class="panel-heading">
       <%= e.information.title %>
+      <%= link_to 'detail' ,information_path(e.information_id) %>
     </div>
   </div>
   <% end %>
   <hr>
   <h2>登録情報</h2>
+  <hr>
   <div class="panel panel-info">
     <div class="panel-heading">
       <%= '氏名：' + @user.name %>
