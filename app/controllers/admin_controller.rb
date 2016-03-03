@@ -15,20 +15,4 @@ class AdminController < ApplicationController
       @user = current_user
     end
   end
-
-  def edit
-    if current_user.admin?
-      @user = User.find(params[:id])
-    else
-      @user = current_user
-    end
-  end
-
-  def update
-    if current_user.admin?
-      @user = User.find(params[:id])
-    else
-      @user = current_user
-    end
-  end
 end

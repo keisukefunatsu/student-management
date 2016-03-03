@@ -66,6 +66,20 @@
     <% if current_user %>
     <div class="row">
       <div class="col-md-3">
+        <div class="row">
+          <div class="col-md-3">
+            <i class="zmdi zmdi-face zmdi-hc-3x"></i>
+          </div>
+          <div class="col-md-7">
+            <p>
+
+            </p>
+            <p class="text-muted">
+              <%= current_user.name %>
+            </p>
+          </div>
+        </div>
+
         <ul class="nav nav-pills nav-stacked">
           <li class=" <%= active?("home","information") %> ">
             <%= link_to root_path, class:'' do %>
