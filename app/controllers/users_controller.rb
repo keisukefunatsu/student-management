@@ -3,7 +3,12 @@ before_action :authenticate_user!
 before_action :confirmed_user
 before_action :admin_user, except: [:show]
   def show
+    if current_user.admin?
+      @user = User.find(params[:id])
+    else
       @user = current_user
+    end
+
   end
 
   def edit

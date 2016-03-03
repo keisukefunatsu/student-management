@@ -58,12 +58,15 @@
       <% end %>
       <% else %>
         <p>
-           このアカウントは承認待ちです 
+           このアカウントは承認待ちです
         </p>
       <% end %>
     <% else %>
       <p>
       まずは以下のリンクからログインして下さい
+      </p>
+      <p>
+          ログイン後、本人のアカウントであることを承認した後に利用可能となります。
       </p>
       <%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2),class:'btn btn-info' %>
     <% end %>
