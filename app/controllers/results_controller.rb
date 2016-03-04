@@ -30,6 +30,7 @@ class ResultsController < ApplicationController
 
   def edit
     @result = Result.find(params[:id])
+    @user = @result.user
   end
 
   def update

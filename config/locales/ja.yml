@@ -2,11 +2,13 @@
 ja:
   activerecord:
     models:
-      information:
+      information: お知らせ
     attributes:
       information:
         content: 内容
         title: タイトル
+        start_date: 開催日
+        expire_date: 申し込み期限
     models:
       result:
     attributes:

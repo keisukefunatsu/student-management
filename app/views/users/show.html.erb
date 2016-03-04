@@ -15,7 +15,11 @@
           <%= link_to '詳細' ,information_path(e.information_id) %>
         </p>
         <% if e.information[:start_date] %>
-          <%= '開催終了しました' if e.information[:start_date] < Time.now.at_beginning_of_day %>
+          <%  if e.information[:start_date] < Time.now.at_beginning_of_day %>
+            <%= '開催終了しました' %>
+          <% else %>
+            <%= '開催日時：' + e.information[:start_date].strftime('%Y年%m月%d日 %H:%M')%>
+          <% end %>
         <% end %>
 
       </div>

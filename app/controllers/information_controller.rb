@@ -2,6 +2,7 @@ class InformationController < ApplicationController
   before_action :authenticate_user!
   before_action :confirmed_user
   before_action :admin_user, except: [:show]
+
   def new
     @info = Information.new
   end
@@ -37,6 +38,7 @@ class InformationController < ApplicationController
   def show
     @info = Information.find(params[:id])
   end
+  
   private
 
   def info_params
