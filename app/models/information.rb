@@ -5,14 +5,14 @@ class Information < ActiveRecord::Base
   validates :content, length: { maximum: 2000 }, presence: true
   validates :start_date, presence: true
   validates :expire_date, presence: true
-  validate :start_date_should_be_before_expire_date
+  validate :expire_date_should_be_before_start_date
 
   private
 
-  def start_date_should_be_before_expire_date
+  def expire_date_should_be_before_start_date
     return unless start_date && expire_date
-    if start_date >= expire_date || start_date <= Time.now
-      errors.add(:start_date, 'は掲載期限より前、または現在より後の日時を設定してください')
+    if expire_date >= start_date || expire_date <= Time.now
+      errors.add(:start_date ,'について掲載期限は開催日時より前で、現在より後の日時を設定してください')
     end
   end
 end
