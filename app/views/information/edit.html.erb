@@ -24,7 +24,9 @@
       <%= f.label '内容' %>
       <%= f.text_area :content, class: 'form-control',row: 10 %>
     </div>
-
+    <div class="form-group">
+    <%= f.label '開催日' %>
+    <%= f.datetime_select :start_date, start_year: now.year, end_year: now.year + 1 %>
     <div class="form-group">
     <%= f.label '申し込み期限' %>
     <%= f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1 %>

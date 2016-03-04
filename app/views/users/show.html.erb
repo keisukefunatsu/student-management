@@ -3,13 +3,24 @@
 
   <h2>参加申し込み中のイベント</h2>
   <hr>
-  <% @user.tickets.each do |e| %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <%= e.information.title %>
-      <%= link_to 'detail' ,information_path(e.information_id) %>
+  <% if @tickets %>
+    <% @tickets.each do |e| %>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <p>
+          <%= e.information.title %>
+        </p>
+
+        <p>
+          <%= link_to '詳細' ,information_path(e.information_id) %>
+        </p>
+        <% if e.information[:start_date] %>
+          <%= '開催終了しました' if e.information[:start_date] < Time.now.at_beginning_of_day %>
+        <% end %>
+
+      </div>
     </div>
-  </div>
+    <% end %>
   <% end %>
   <hr>
   <h2>登録情報</h2>

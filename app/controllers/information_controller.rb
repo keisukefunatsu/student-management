@@ -41,7 +41,7 @@ class InformationController < ApplicationController
 
   def info_params
     params.require(:information).permit(
-      :title, :content, :category_id, :expire_date, :participate
+      :title, :content, :category_id,:start_date, :expire_date, :participate
       )
   end
 end

@@ -10,7 +10,7 @@
           <%= link_to(e) do %>
           <%= e.title %>
           <% end %>
-          <%= '　　作成日　' + e.created_at.strftime('%Y年%m月%d日 %H:%M')  %>
+          <%= '　　開催日　' + e.start_date.strftime('%Y年%m月%d日 %H:%M') if e.start_date  %>
         </div>
         <div class="panel-body">
           <%= e.content %>
@@ -18,25 +18,23 @@
             <br><hr>
             <%= link_to '編集', edit_information_path(e),class: 'btn btn-success' %>
             <%= link_to '削除', information_path(e),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'} %>
-            <% if e.tickets.first%>
-              <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary'%>
-            <% end %>
-            <% if e.participate? %>
-                申し込み期限&nbsp;&nbsp;&nbsp;<%= e.expire_date.strftime('%Y年%m月%d日') %>
-            <% end %>
-
+            <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary' if e.tickets.first%>
+            <%= '申し込み期限' + e.expire_date.strftime('%Y年%m月%d日') if e.participate?%>
           <% elsif e.participate && current_user.tickets.find_by(information_id: e)%>
             <hr>
             <p>
               このイベントに参加登録済みです。キャンセルする場合は以下のボタンを押してください。
             </p>
             <%= link_to '参加をキャンセルする', information_ticket_path(e, e.tickets(current_user)), method: :delete, class:'btn btn-warning' %>
+          <% elsif e.expire_date < Time.now.at_beginning_of_day %>
+            <hr>
+            <%= '申し込み終了しました' %>
           <% elsif e.participate %>
           <hr>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTicket">
             参加する
           </button>
-          申し込み期限<%= e.expire_date %>
+          申し込み期限<%= e.expire_date.strftime('%Y年%m月%d日') %>
           <div class="modal fade" id="createTicket" tabindex="-1" role="dialog" aria-labelledby="dialogHeader" aria-hidden="true">
             <div class="modal-dialog">
 

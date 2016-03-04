@@ -7,6 +7,9 @@ before_action :admin_user, except: [:show]
       @user = User.find(params[:id])
     else
       @user = current_user
+      from = Time.now.at_beginning_of_day - 30.day
+      to = from + 60.day
+      @tickets = current_user.tickets.where(created_at: from...to).order(created_at: :desc)
     end
 
   end
