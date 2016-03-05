@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!
   before_action :confirmed_user
-  before_action :admin_user, except: [:create,:destroy,:new]
+  before_action :admin_user, except: [:create,:destroy,:new,:show]
   def index
     @info = Information.find(params[:information_id])
     @tickets = @info.tickets
@@ -24,6 +24,9 @@ class TicketsController < ApplicationController
   end
 
   def show
+    from = Time.now.at_beginning_of_day - 30.day
+    to = from + 60.day
+    @tickets = current_user.tickets.where(created_at: from...to).order(created_at: :desc)
   end
 
   def destroy

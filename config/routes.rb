@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :results
   resources :information
+  resources :tickets
   root to: 'home#index'
   get '/logout' => 'sessions#destroy'
   resources :admin
