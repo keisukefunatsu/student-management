@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.3.0"
+gem "rack-contrib", require: "rack/contrib"
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
