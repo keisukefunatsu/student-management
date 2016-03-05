@@ -42,6 +42,8 @@
             <li class="navbar-text text-muted">
               <%= current_user.name %>
             </li>
+            <li><%= link_to '登校', come_path(current_user)  %></li>
+            <li><%= link_to '下校', out_path(current_user)  %></li>
           <% end %>
           <% if current_user %>
             <li><%= link_to 'ログアウト', logout_path  %></li>
@@ -84,15 +86,20 @@
             <i class="zmdi zmdi-file-text zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;指導報告
             <% end %>
           </li>
+          <li class=" <%= active?("tickets") %> ">
+            <%= link_to  ticket_path(current_user) , class: '' do %>
+            <i class="zmdi zmdi-edit zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;申込中イベント
+            <span class="badge"> <%= registered_tickets %></span>
+            <% end %>
+          </li>
+          <li class=" <%= active?("timecards") %> ">
+            <%= link_to  timecard_path(current_user) , class: '' do %>
+            <i class="zmdi zmdi-alarm zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;登下校時間
+            <% end %>
+          </li>
           <li class=" <%= active?("users") %> ">
             <%= link_to  user_path(current_user) , class: '' do %>
             <i class="zmdi zmdi-lock-outline zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;登録情報
-            <% end %>
-          </li>
-          <li class=" <%= active?("tickets") %> ">
-            <%= link_to  ticket_path(current_user) , class: '' do %>
-            <i class="zmdi zmdi-alarm zmdi-hc-2x"></i>&nbsp;&nbsp;&nbsp;&nbsp;申込中イベント
-            <span class="badge"> <%= registered_tickets %></span>
             <% end %>
           </li>
         </ul>

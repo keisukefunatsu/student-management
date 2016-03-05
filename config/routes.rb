@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
-
   resources :results
   resources :information
   resources :tickets
+  resources :timecards
+
+  get '/come' => 'timecards#come'
+  get '/out' => 'timecards#out'
+  
   root to: 'home#index'
   get '/logout' => 'sessions#destroy'
   resources :admin
