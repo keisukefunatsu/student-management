@@ -13,45 +13,45 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--transparent ">
-      <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">個別指導塾コミット</span>
-        <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
-            <% if current_user && current_user.admin? %>
-                <li class="mdl-navigation__link mdl-layout__tab"><%= current_user.name + '(管理者)'%></li>
-                <%= link_to 'お知らせ作成', new_information_path,class:'mdl-navigation__link mdl-layout__tab' %>
-                <%= link_to '管理画面', admin_index_path,class:'mdl-navigation__link mdl-layout__tab' %>
-            <% elsif current_user %>
-                <%= current_user.name %>
-            <% end %>
-            <% if current_user %>
-              <%= link_to 'ログアウト', logout_path,class:'mdl-navigation__link mdl-layout__tab'  %>
-            <% else %>
-              <%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2),class:'mdl-navigation__link mdl-layout__tab' %>
-            <% end %>
-        </nav>
+  <header class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarcommit">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <%= link_to '個別指導塾コミット', root_path, class: 'navbar-brand' %>
       </div>
-    </header>
 
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">メニュー</span>
-      <nav class="mdl-navigation">
-        <% if current_user && current_user.admin? %>
-            <li class="mdl-navigation__link"><%= current_user.name + '(管理者)'%></li>
-            <%= link_to 'お知らせ作成', new_information_path,class:'mdl-navigation__link' %>
-            <%= link_to '管理画面', admin_index_path,class:'mdl-navigation__link' %>
-        <% elsif current_user %>
-            <%= current_user.name %>
-        <% end %>
-        <% if current_user %>
-          <%= link_to 'ログアウト', logout_path,class:'mdl-navigation__link'  %>
-        <% else %>
-          <%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2),class:'mdl-navigation__link' %>
-        <% end %>
-      </nav>
+
+      <div class="collapse navbar-collapse" id="navbarcommit">
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user && current_user.admin? %>
+            <li class="navbar-text text-muted" >
+              <%= current_user.name + '(管理者)' %>
+            </li>
+            <li>
+              <%= link_to 'お知らせ作成', new_information_path %>
+            </li>
+            <li>
+              <%= link_to '管理画面', admin_index_path %>
+            </li>
+          <% elsif current_user %>
+            <li class="navbar-text text-muted">
+              <%= current_user.name %>
+            </li>
+          <% end %>
+          <% if current_user %>
+            <li><%= link_to 'ログアウト', logout_path  %></li>
+          <% else %>
+            <li><%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2) %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
+  </header>
     <main class="container">
       <% if flash[:notice] %>
         <div class="alert alert-success">
