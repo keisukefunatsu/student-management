@@ -14,6 +14,7 @@
           <%= '開催終了しました' %>
         <% else %>
           <%= link_to 'キャンセル', information_ticket_path(e.information_id,e.id), method: :delete, class:'btn btn-warning', data: {confirm: '本当にキャンセルしますか？'} %>
+          <hr>
           <%= '開催日時：' + e.information[:start_date].strftime('%Y年%m月%d日 %H:%M')%>
         <% end %>
       <% end %>
