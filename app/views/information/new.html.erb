@@ -1,41 +1,40 @@
 
-<div class="col-md-8">
-  <% now = Time.zone.now %>
-  <div class="page-header">
-    <h1>お知らせ編集</h1>
+
+<% now = Time.zone.now %>
+<div class="page-header">
+  <h1>お知らせ編集</h1>
+</div>
+
+<%= form_for(@info, class: 'form-horizontal', role: 'form') do |f| %>
+  <% if @info.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+      <% @info.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label 'タイトル' %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <%= form_for(@info, class: 'form-horizontal', role: 'form') do |f| %>
-    <% if @info.errors.any? %>
-      <div class="alert alert-danger">
-        <ul>
-        <% @info.errors.full_messages.each do |msg| %>
-            <li> <%= msg %> </li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div class="form-group">
-      <%= f.label 'タイトル' %>
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
+  <div class="form-group">
+    <%= f.label '内容' %>
+    <%= f.text_area :content, class: 'form-control',row: 10 %>
+  </div>
 
-    <div class="form-group">
-      <%= f.label '内容' %>
-      <%= f.text_area :content, class: 'form-control',row: 10 %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label '開催日' %>
-    <%= f.datetime_select :start_date, start_year: now.year, end_year: now.year + 1 %>
-    <div class="form-group">
-    <%= f.label '申し込み期限' %>
-    <%= f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1 %>
-    </div>
-    <div class="form-group">
-    <%= f.label '参加するか尋ねる' %>
-    <%= f.check_box :participate,{checked: true}%>
-    </div>
-    <%= f.submit '作成',class: 'btn btn-default', data: {disable_with:'更新しています...'}  %>
-  <% end %>
-</div>
+  <div class="form-group">
+  <%= f.label '開催日' %>
+  <%= f.datetime_select :start_date, start_year: now.year, end_year: now.year + 1 %>
+  <div class="form-group">
+  <%= f.label '申し込み期限' %>
+  <%= f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1 %>
+  </div>
+  <div class="form-group">
+  <%= f.label '参加するか尋ねる' %>
+  <%= f.check_box :participate,{checked: true}%>
+  </div>
+  <%= f.submit '作成',class: 'btn btn-default', data: {disable_with:'更新しています...'}  %>
+<% end %>

@@ -1,39 +1,36 @@
+<% now = Time.zone.now %>
+<div class="page-header">
+  <h1>生徒情報編集</h1>
+</div>
 
-<div class="col-md-8">
-  <% now = Time.zone.now %>
-  <div class="page-header">
-    <h1>生徒情報編集</h1>
+<%= form_for(@user, class: 'form-horizontal', role: 'form') do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label '生徒として承認する' %>
+    <%= f.check_box :confirmed,{checked: true}%>
+  </div>
+  <div class="form-group">
+    <%= f.label '学年' %>
+    <%= f.select(:grade, ["中１","中2","中3","高１","高2","高3"], {class: 'form-control'} )%>
   </div>
 
-  <%= form_for(@user, class: 'form-horizontal', role: 'form') do |f| %>
-    <% if @user.errors.any? %>
-      <div class="alert alert-danger">
-        <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-            <li> <%= msg %> </li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div class="form-group">
-      <%= f.label '生徒として承認する' %>
-      <%= f.check_box :confirmed,{checked: true}%>
-    </div>
-    <div class="form-group">
-      <%= f.label '学年' %>
-      <%= f.select(:grade, ["中１","中2","中3","高１","高2","高3"], {class: 'form-control'} )%>
-    </div>
-
-    <div class="form-group">
-      <%= f.label '学校名' %>
-      <%= f.text_field :school_name, class: 'form-control',row: 10,placeholder:'加古川中学校' %>
-    </div>
-    <div class="form-group">
-      <%= f.label '電話番号' %>
-      <%= f.telephone_field :school_name, class: 'form-control',row: 10, placeholder:'090-0000-0000' %>
-    </div>
+  <div class="form-group">
+    <%= f.label '学校名' %>
+    <%= f.text_field :school_name, class: 'form-control',row: 10,placeholder:'加古川中学校' %>
+  </div>
+  <div class="form-group">
+    <%= f.label '電話番号' %>
+    <%= f.telephone_field :school_name, class: 'form-control',row: 10, placeholder:'090-0000-0000' %>
+  </div>
 
 
-    <%= f.submit '更新',class: 'btn btn-default', data: {disable_with:'更新しています...'}  %>
-  <% end %>
-</div>
+  <%= f.submit '更新',class: 'btn btn-default', data: {disable_with:'更新しています...'}  %>
+<% end %>

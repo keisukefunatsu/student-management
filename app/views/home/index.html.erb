@@ -1,77 +1,77 @@
-  <div class="col-md-8">
-    <% if current_user %>
-      <% if current_user.confirmed? %>
-      <h1>お知らせ</h1>
+<% if current_user %>
+  <% if current_user.confirmed? %>
+  <h1>お知らせ</h1>
+  <hr>
+  <%= paginate @info %>
+  <% @info.each do |e| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= link_to(e) do %>
+      <%= e.title %>
+      <% end %>
+      <% if e.start_date && e.participate? %>
+        <%= '　　開催日時　' + e.start_date.strftime('%Y年%m月%d日 %H:%M') %>
+        <%= '　　お知らせ掲載日　' + e.created_at.strftime('%Y年%m月%d日') %>
+      <% else %>
+        <%= '　　お知らせ掲載日　' + e.created_at.strftime('%Y年%m月%d日') %>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <%= e.content %>
       <hr>
-      <%= paginate @info %>
-      <% @info.each do |e| %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <%= link_to(e) do %>
-          <%= e.title %>
-          <% end %>
-          <% if e.start_date && e.participate? %>
-            <%= '　　開催日時　' + e.start_date.strftime('%Y年%m月%d日 %H:%M') %>
-            <%= '　　お知らせ掲載日　' + e.created_at.strftime('%Y年%m月%d日') %>
-          <% else %>
-            <%= '　　お知らせ掲載日　' + e.created_at.strftime('%Y年%m月%d日') %>
-          <% end %>
-        </div>
-        <div class="panel-body">
-          <%= e.content %>
-          <hr>
-          <% if current_user.admin? %>
-            <%= link_to '編集', edit_information_path(e),class: 'btn btn-success' %>
-            <%= link_to '削除', information_path(e),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'} %>
-            <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary' if e.tickets.first%>
-            <%= '申し込み期限' + e.expire_date.strftime('%Y年%m月%d日') if e.participate?%>
-          <% elsif e.participate && current_user.tickets.find_by(information_id: e)%>
-            <p>
-              このイベントに参加登録済みです。キャンセルする場合は以下のボタンを押してください。
-            </p>
-            <%= link_to '参加をキャンセルする', information_ticket_path(e, e.tickets(current_user)), method: :delete, class:'btn btn-warning', data: {confirm: '本当にキャンセルしますか？'} %>
-          <% elsif e.expire_date < Time.now.at_beginning_of_day %>
-            <%= '申し込み終了しました' %>
-          <% elsif e.participate %>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTicket">
-            参加する
-          </button>
-          申し込み期限<%= e.expire_date.strftime('%Y年%m月%d日') %>
-          <div class="modal fade" id="createTicket" tabindex="-1" role="dialog" aria-labelledby="dialogHeader" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="dialogHeader">ご質問があればご記入ください</h4>
-                </div>
-                <%= form_for(e.tickets.build, url:information_tickets_path(e),remote:true) do |f| %>
-                  <div class="modal-body">
-                    <%= f.text_field :comment, class: 'form-control' %>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
-                    <%= f.button 'submit', class: 'btn btn-primary', data: {disable_with:'処理中です....'} %>
-                  </div>
-                <% end %>
-              </div>
+      <% if current_user.admin? %>
+        <%= link_to '編集', edit_information_path(e),class: 'btn btn-success' %>
+        <%= link_to '削除', information_path(e),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'} %>
+        <%= link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary' if e.tickets.first%>
+          <%= '　　申込期限　：　' + e.expire_date.strftime('%Y年%m月%d日') if e.participate?%>
+      <% elsif e.participate && current_user.tickets.find_by(information_id: e)%>
+        <p>
+          このイベントに参加登録済みです。キャンセルする場合は以下のボタンを押してください。
+        </p>
+        <%= link_to 'キャンセル', information_ticket_path(e, e.tickets(current_user)), method: :delete, class:'btn btn-warning', data: {confirm: '本当にキャンセルしますか？'} %>
+      <% elsif e.expire_date < Time.now.at_beginning_of_day %>
+        <p>
+          <%= '申し込み終了しました' %>
+        </p>
+      <% elsif e.participate %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTicket">
+        参加
+      </button>
+          <%= '　　申込期限　：　' + e.expire_date.strftime('%Y年%m月%d日') %>
+      <div class="modal fade" id="createTicket" tabindex="-1" role="dialog" aria-labelledby="dialogHeader" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="dialogHeader">ご質問があればご記入ください</h4>
             </div>
+            <%= form_for(e.tickets.build, url:information_tickets_path(e),remote:true) do |f| %>
+              <div class="modal-body">
+                <%= f.text_field :comment, class: 'form-control' %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                <%= f.button 'submit', class: 'btn btn-primary', data: {disable_with:'処理中です....'} %>
+              </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
       <% end %>
-      <% else %>
-        <p>
-           このアカウントは承認待ちです
-        </p>
-      <% end %>
-    <% else %>
-      <p>
-      まずは以下のリンクからログインして下さい
-      </p>
-      <p>
-          ログイン後、本人のアカウントであることを承認した後に利用可能となります。
-      </p>
-      <%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2),class:'btn btn-info' %>
-    <% end %>
+    </div>
   </div>
+  <% end %>
+  <% else %>
+    <p>
+       このアカウントは承認待ちです
+    </p>
+  <% end %>
+<% else %>
+  <p>
+  まずは以下のリンクからログインして下さい
+  </p>
+  <p>
+      ログイン後、本人のアカウントであることを承認した後に利用可能となります。
+  </p>
+  <%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2),class:'btn btn-info' %>
+<% end %>

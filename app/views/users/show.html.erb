@@ -1,56 +1,51 @@
-
-<div class="col-md-8">
-
-  <h2>参加申し込み中のイベント</h2>
-  <hr>
-  <% if @tickets %>
-    <% @tickets.each do |e| %>
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <p>
-          <%= e.information.title %>
-        </p>
-
-        <p>
-          <%= link_to '詳細' ,information_path(e.information_id) %>
-        </p>
-        <% if e.information[:start_date] %>
-          <%  if e.information[:start_date] < Time.now.at_beginning_of_day %>
-            <%= '開催終了しました' %>
-          <% else %>
-            <%= '開催日時：' + e.information[:start_date].strftime('%Y年%m月%d日 %H:%M')%>
-          <% end %>
-        <% end %>
-
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-  <hr>
-  <h2>登録情報</h2>
-  <hr>
-  <div class="panel panel-info">
+<h2>参加申し込み中のイベント</h2>
+<hr>
+<% if @tickets %>
+  <% @tickets.each do |e| %>
+  <div class="panel panel-warning">
     <div class="panel-heading">
-      <%= '氏名：' + @user.name %>
-    </div>
-    <ul class="list-group">
-      <li class="list-group-item"><%= 'メール：' + @user.email %></li>
-      <li class="list-group-item"><%= '最近のログイン：' + @user.current_sign_in_at.strftime('%Y年%m月%d日 %H:%M') %></li>
-    </ul>
-    <div class="panel-body">
-      直近の指導報告
-      <hr>
-    <% if @user.results.last %>
-      <h3><%= @user.results.last.title %></h3>
       <p>
-        <%= @user.results.last.content %>
+        <%= link_to e.information.title ,information_path(e.information_id) %>
       </p>
-
-    <% else %>
-      指導報告はありません
-    <% end %>
     </div>
+    <div class="panel-body">
+      <% if e.information[:start_date] %>
+        <%  if e.information[:start_date] < Time.now.at_beginning_of_day %>
+          <%= '開催終了しました' %>
+        <% else %>
+          <%= link_to 'キャンセル', information_ticket_path(e.information_id,e.id), method: :delete, class:'btn btn-warning', data: {confirm: '本当にキャンセルしますか？'} %>
+          <%= '開催日時：' + e.information[:start_date].strftime('%Y年%m月%d日 %H:%M')%>
+        <% end %>
+      <% end %>
+    </div>
+    <hr>
   </div>
+  <% end %>
+<% end %>
 
-  <%= link_to '過去の指導情報',result_path, class:'btn btn-info' %>
+<h2>登録情報</h2>
+<hr>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <%= '氏名：' + @user.name %>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item"><%= 'メール：' + @user.email %></li>
+    <li class="list-group-item"><%= '最近のログイン：' + @user.current_sign_in_at.strftime('%Y年%m月%d日 %H:%M') %></li>
+  </ul>
+  <div class="panel-body">
+    直近の指導報告
+    <hr>
+  <% if @user.results.last %>
+    <h3><%= @user.results.last.title %></h3>
+    <p>
+      <%= @user.results.last.content %>
+    </p>
+
+  <% else %>
+    指導報告はありません
+  <% end %>
+  </div>
 </div>
+
+<%= link_to '過去の指導情報',result_path, class:'btn btn-info' %>

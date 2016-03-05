@@ -1,6 +1,6 @@
 class Information < ActiveRecord::Base
   belongs_to :user
-  has_many :tickets
+  has_many :tickets, :dependent => :delete_all
   validates :title, length: { maximum: 50 }, presence: true
   validates :content, length: { maximum: 2000 }, presence: true
   validates :start_date, presence: true
