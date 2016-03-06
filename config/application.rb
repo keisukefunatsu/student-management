@@ -9,9 +9,7 @@ Bundler.require(*Rails.groups)
 module Commitapp
   class Application < Rails::Application
     config.middleware.use Rack::Access, {
-      "/come" => ["127.0.0.1", "124.103.227.155"],
       "/come" => ["127.0.0.1", "203.141.154.175"],
-      "/out" => ["127.0.0.1", "124.103.227.155"],
       "/out" => ["127.0.0.1", "203.141.154.175"]
     }
 

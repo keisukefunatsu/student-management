@@ -4,13 +4,14 @@ Rails.application.routes.draw do
   resources :information
   resources :tickets
   resources :timecards
+  resources :admin
 
   post '/come' => 'timecards#come'
   post '/out' => 'timecards#out'
 
   root to: 'home#index'
   get '/logout' => 'sessions#destroy'
-  resources :admin
+
 
 
   devise_for :users, controllers: {

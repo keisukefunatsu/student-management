@@ -8,7 +8,7 @@ class TimecardsController < ApplicationController
     @user = current_user
     @user.timecards.create(timecard_params)
     if @user.save
-      redirect_to root_path, notice: '今日も頑張っていきましょう'
+      redirect_to root_path,notice: 'こんにちは！今日も張り切っていきましょう！'
     else
       redirect_to root_path, notice: '何かエラーが起こったようです...再度お試し下さい'
     end
@@ -18,7 +18,7 @@ class TimecardsController < ApplicationController
     @user = current_user
     @user.timecards.create(timecard_params)
     if @user.save
-      redirect_to root_path, notice: 'お疲れ様でした！気をつけて帰ってくださいね！'
+      redirect_to root_path,notice: 'お疲れ様でした！'
     else
       redirect_to root_path, notice: '何かエラーが起こったようです...再度お試し下さい'
     end
