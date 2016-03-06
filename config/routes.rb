@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :tickets
   resources :timecards
 
-  get '/come' => 'timecards#come'
-  get '/out' => 'timecards#out'
-  
+  post '/come' => 'timecards#come'
+  post '/out' => 'timecards#out'
+
   root to: 'home#index'
   get '/logout' => 'sessions#destroy'
   resources :admin
@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :results
+  end
+
+  resources :users do
+    resources :timecards
   end
 
   resources :information do

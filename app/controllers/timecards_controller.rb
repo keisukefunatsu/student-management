@@ -2,9 +2,11 @@ class TimecardsController < ApplicationController
   before_action :authenticate_user!
   before_action :confirmed_user
 
+  PER = 5
+
   def come
     @user = current_user
-    @user.timecards.create(title: '登校時間')
+    @user.timecards.create(timecard_params)
     if @user.save
       redirect_to root_path, notice: '今日も頑張っていきましょう'
     else
@@ -14,7 +16,7 @@ class TimecardsController < ApplicationController
 
   def out
     @user = current_user
-    @user.timecards.create(title: '下校時間')
+    @user.timecards.create(timecard_params)
     if @user.save
       redirect_to root_path, notice: 'お疲れ様でした！気をつけて帰ってくださいね！'
     else
@@ -23,7 +25,15 @@ class TimecardsController < ApplicationController
   end
 
   def show
-    @timecards = current_user.timecards
+    @timecards = current_user.timecards.page(params[:page]).per(PER).all.order('created_at DESC')
+  end
+
+  private
+
+  def timecard_params
+    params.require(:timecard).permit(
+      :title
+      )
   end
 
 end

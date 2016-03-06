@@ -42,8 +42,6 @@
             <li class="navbar-text text-muted">
               <%= current_user.name %>
             </li>
-            <li><%= link_to '登校', come_path(current_user)  %></li>
-            <li><%= link_to '下校', out_path(current_user)  %></li>
           <% end %>
           <% if current_user %>
             <li><%= link_to 'ログアウト', logout_path  %></li>
@@ -51,6 +49,14 @@
             <li><%= link_to 'Googleでサインイン', user_omniauth_authorize_path(:google_oauth2) %></li>
           <% end %>
         </ul>
+        <%= form_for current_user.timecards.build, html:{url:out_path, class: 'navbar-form navbar-right'} do |f| %>
+          <%= f.hidden_field :title, :value => '下校時間',class:'form-group' %>
+          <%= f.button '下校', class: 'btn btn-default', data: {disable_with:'処理中です....'} %>
+        <% end %>
+        <%= form_for current_user.timecards.build, html:{url:come_path, class: 'navbar-form navbar-right'} do |f| %>
+          <%= f.hidden_field :title, :value => '登校時間',class:'form-group' %>
+          <%= f.button '登校', class: 'btn btn-default', data: {disable_with:'処理中です....'} %>
+        <% end %>
       </div>
     </div>
   </header>

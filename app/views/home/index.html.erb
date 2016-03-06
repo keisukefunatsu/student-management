@@ -45,7 +45,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title" id="dialogHeader">ご質問があればご記入ください</h4>
             </div>
-            <%= form_for(e.tickets.build, url:information_tickets_path(e),remote:true) do |f| %>
+            <%= form_for(e.tickets.build, url:information_tickets_path(e), remote:true) do |f| %>
               <div class="modal-body">
                 <%= f.text_field :comment, class: 'form-control' %>
               </div>
