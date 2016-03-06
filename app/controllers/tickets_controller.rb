@@ -2,9 +2,12 @@ class TicketsController < ApplicationController
   before_action :authenticate_user!
   before_action :confirmed_user
   before_action :admin_user, except: [:create,:destroy,:new,:show]
+
+  PER = 5
+
   def index
     @info = Information.find(params[:information_id])
-    @tickets = @info.tickets
+    @tickets = @info.tickets.page(params[:page]).per(PER).all.order('created_at DESC')
   end
   def new
     raise ApplicationController::RoutingError,'申し訳ありません、ログインしてからお申し込みください。'
