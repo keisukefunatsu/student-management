@@ -1,6 +1,8 @@
 
 <h2>登下校時間</h2>
 <hr>
+
+<%= paginate @timecards %>
 <% if @timecards %>
   <% @timecards.each do |e| %>
   <ul class="list-group">
