@@ -1,0 +1,19 @@
+- now = Time.zone.now
+.page-header
+  h1
+    | 指導報告修正 
+    = '(' + @user.name + ')'
+= form_for(@result, class: 'form-horizontal', role: 'form') do |f|
+  - if @result.errors.any?
+    .alert.alert-danger
+      ul
+        - @result.errors.full_messages.each do |msg|
+          li
+            = msg
+  .form-group
+    = f.label 'タイトル'
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label '内容'
+    = f.text_area :content, class: 'form-control',row: 10
+  = f.submit '編集',class: 'btn btn-default', data: {disable_with:'作成しています...'}

@@ -1,0 +1,17 @@
+h2
+  | 参加申し込み中のイベント
+hr
+- if @tickets
+  - @tickets.each do |e|
+    .panel.panel-warning
+      .panel-heading
+        p
+          = link_to e.information.title ,information_path(e.information_id)
+      .panel-body
+        - if e.information[:start_date]
+          - if e.information[:start_date] < Time.now.at_beginning_of_day
+            = '開催終了しました'
+          - else
+            = link_to 'キャンセル', information_ticket_path(e.information_id,e.id), method: :delete, class:'btn btn-warning', data: {confirm: '本当にキャンセルしますか？'}
+            hr
+            = '開催日時：' + e.information[:start_date].strftime('%Y年%m月%d日 %H:%M')

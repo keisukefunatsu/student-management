@@ -1,0 +1,10 @@
+h2
+  | 登下校時間
+hr
+= paginate @timecards
+- if @timecards
+  - @timecards.each do |e|
+    ul.list-group
+      li.list-group-item
+        = e.title + '　：　'
+        = e.created_at.strftime('%Y年%m月%d日 %H:%M')

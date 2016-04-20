@@ -1,0 +1,12 @@
+h2
+  = @info.title
+- @tickets.each do |e|
+  hr
+  .panel.panel-default
+    .panel-heading
+      = '参加者氏名:    ' + User.find(e.user_id).name
+    .panel-body
+      p
+        |  コメント 
+      p
+        = e.comment

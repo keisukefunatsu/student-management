@@ -1,0 +1,67 @@
+
+- if current_user
+  - if current_user.confirmed?
+    h1
+      | お知らせ
+    hr
+    = paginate @info
+    - @info.each do |e|
+      .panel.panel-default
+        .panel-heading
+          = link_to(e) do
+            = e.title
+          - if e.start_date && e.participate?
+            = '　　開催日時　' + e.start_date.strftime('%Y年%m月%d日 %H:%M')
+            = '　　お知らせ掲載日　' + e.created_at.strftime('%Y年%m月%d日')
+          - else
+            = '　　お知らせ掲載日　' + e.created_at.strftime('%Y年%m月%d日')
+        .panel-body
+          = e.content
+          hr
+          - if current_user.admin?
+            = link_to '編集', edit_information_path(e),class: 'btn btn-success'
+            = link_to '削除', information_path(e),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'}
+            = link_to '参加者一覧' ,information_tickets_path(e),class:'btn btn-primary' if e.tickets.first
+            = '　　申込期限　：　' + e.expire_date.strftime('%Y年%m月%d日') if e.participate?
+          - elsif e.participate && current_user.tickets.find_by(information_id: e)
+            p
+              |  このイベントに参加登録済みです。キャンセルする場合は以下のボタンを押してください。
+            = link_to 'キャンセル', information_ticket_path(e, e.tickets(current_user)), method: :delete, class:'btn btn-warning', data: {confirm: '本当にキャンセルしますか？'}
+          - elsif e.expire_date < Time.now.at_beginning_of_day
+            p
+              = '申し込み終了しました'
+          - elsif e.participate
+            button.btn.btn-primary[type="button" data-toggle="modal" data-target="#createTicket"]
+              |  参加
+            = '　　申込期限　：　' + e.expire_date.strftime('%Y年%m月%d日')
+            #createTicket.modal.fade[tabindex="-1" role="dialog" aria-labelledby="dialogHeader" aria-hidden="true"]
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    button.close[type="button" data-dismiss="modal" aria-hidden="true"]
+                      | ×
+                    h4#dialogHeader.modal-title
+                      | ご質問があればご記入ください
+                  = form_for(e.tickets.build, url:information_tickets_path(e), remote:true) do |f|
+                    .modal-body
+                      = f.text_field :comment, class: 'form-control'
+                    .modal-footer
+                      button.btn.btn-default[type="button" data-dismiss="modal"]
+                        | cancel
+                      = f.button 'submit', class: 'btn btn-primary', data: {disable_with:'処理中です....'}
+  - else
+    h2
+      |  このアカウントは承認待ちです
+    hr
+    h3
+      | もしかして？
+    p
+      |  申請してから数日アカウントが承認されていない場合、お手数ですが教室の管理者にお伝え下さい。
+- else
+  p
+    |  まずは以下のリンクからログインして下さい
+  p
+    |  ログイン後、本人のアカウントであることを承認した後に利用可能となります。
+  = link_to 'Googleでサインイン', user_google_oauth2_omniauth_authorize_path,class:'btn btn-info'
+  br
+  = link_to '普通にログイン(テストユーザ用)', new_user_session_path
