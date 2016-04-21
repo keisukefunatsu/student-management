@@ -12,7 +12,7 @@ class Information < ActiveRecord::Base
   def expire_date_should_be_before_start_date
     return unless start_date && expire_date
     if expire_date >= start_date || expire_date <= Time.now
-      errors.add(:start_date ,'について掲載期限は開催日時より前で、現在より後の日時を設定してください')
+      errors.add(:start_date ,'は申し込み期限より後で、現在より後の日時を設定してください')
     end
   end
 end

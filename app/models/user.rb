@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :tickets, :dependent => :delete_all
   has_many :timecards, :dependent => :delete_all
   has_many :information
+  has_many :participating_events, through: :tickets, source: :information
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
@@ -19,4 +21,5 @@ class User < ActiveRecord::Base
     end
     user
   end
+
 end
