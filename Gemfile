@@ -33,6 +33,7 @@ end
 
 group :development do
   gem 'web-console'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
