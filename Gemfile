@@ -23,12 +23,15 @@ gem 'autoprefixer-rails'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'better_errors'
   gem 'spring'
   gem 'dotenv-rails'
   gem "rspec-rails", "~> 3.4"
   gem "factory_girl_rails", "~> 4.7"
+end
+
+group :development do
+  gem 'web-console'
 end
 
 group :test do
