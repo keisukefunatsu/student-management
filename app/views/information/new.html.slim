@@ -18,10 +18,10 @@
   .form-group
     = f.label '開催日'
     = f.datetime_select :start_date, start_year: now.year, end_year: now.year + 1
-    .form-group
-      = f.label '申し込み期限'
-      = f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1
-    .form-group
-      = f.label '参加するか尋ねる'
-      = f.check_box :participate,{checked: true}
-    = f.submit '作成',class: 'btn btn-default', data: {disable_with:'更新しています...'}
+  .form-group
+    = f.label '申し込み期限'
+    = f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1
+  .form-group
+    = f.label '参加するか尋ねる'
+    = f.check_box :participate,{checked: true}
+  = f.submit '作成',class: 'btn btn-default', data: {disable_with:'更新しています...'}
