@@ -1,5 +1,8 @@
 
+![](https://s3-us-west-2.amazonaws.com/wordpressimageawesome/wp-content/uploads/2016/05/20233805/92833ef89335452c5c76c529fe8430b2.png)
+
 # 使い方
+
 ## セットアップ
 1. このリポジトリを自分のアカウントへフォークする
 2. ローカルにgit cloneする
@@ -16,6 +19,4 @@
 
 ## ログイン方法
 
-```
 テストユーザー用のログイン画面からログインして下さい
-```
