@@ -10,7 +10,7 @@
 4. `rbenv local 2.3.0` 実行（または 2.2系の任意のバージョンを指定）
 5. rbenvが入っていない人はこちら　→ [Homebrewのインストールとrbenvのインストールまで Mac編](http://qiita.com/issobero/items/e0443b79da117ed48294)
 6. `bundle install` 実行
-7. `cp config/database.yml.sample config/database.yml` 実行
+7. `cp config/database-sample.yml config/database.yml` 実行
 8. `config/database.yml` を自分の環境に合わせて編集する
 9. `bin/rake db:migrate` 実行
 10. `bin/rake db:seed` を実行してテストデータを作成
