@@ -5,10 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-2.times do |n|
-  User.create(email:"admin#{n}@hoge.com",password:'11111111',name: "admin_user#{n+1}",admin: true, confirmed: true)
+2.times.each.with_index(1) do |n|
+  User.create(email:"admin#{n}@example.com",password:'11111111',name: "admin_user#{n}",admin: true, confirmed: true)
 end
 
-5.times do |n|
-  User.create(email:"user#{n}@hoge.com",password:'11111111',name: "test_user#{n+1}",admin: false, confirmed: true)
+5.times.each.with_index(1) do |n|
+  User.create(email:"user#{n}@example.com",password:'11111111',name: "test_user#{n}",admin: false, confirmed: true)
 end
