@@ -5,7 +5,7 @@ class CreateInformation < ActiveRecord::Migration
       t.text :content, null:false
       t.integer :category_id
       t.datetime :start_date
-      t.datetime :expire_date 
+      t.datetime :expire_date
 
       t.timestamps null: false
     end
