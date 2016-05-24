@@ -27,3 +27,18 @@
 - 管理者2: admin2@example.com / 11111111
 - ユーザー1: user1@example.com / 11111111
 - ユーザー2～5: ユーザー1のメールアドレスにある1を2～5に変更する
+
+## 本家の最新のソースに追従する手順
+
+1. `git remote add upstream git@github.com:keisukefunatsu/student-management.git` を実行し、本家リポジトリをupstreamという名前のリモートリポジトリとして登録する。（最初の1回のみ）
+2. `git checkout master` を実行
+3. `git fetch upstream` を実行
+4. `git merge upstream/master` を実行
+5. `bundle install` を実行（Gemfileが変更されていた場合）
+6. `bin/rake db:migrate` を実行（migrationが追加されていた場合）
+
+## 初期データの入れ直し
+
+初期データを入れ直す場合は以下のコマンドを実行する。ただし、開発環境のデータが全部リセットされるので、データが消えても問題ないか実行前に確認すること。
+
+`bin/rake db:setup`
