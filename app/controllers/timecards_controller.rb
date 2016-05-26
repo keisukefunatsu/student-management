@@ -6,6 +6,13 @@ class TimecardsController < ApplicationController
 
   def come
     @user = current_user
+    @user.timecards.create(timecard_params)
+    if @user.save
+      redirect_to root_path, notice: 'こんにちは！今日も張り切っていきましょう！'
+    else
+      redirect_to root_path, notice: '何かエラーが起こったようです...再度お試し下さい'
+    end
+=begin
     if request.remote_ip == "203.141.154.175" || request.remote_ip == "124.103.227.155"
       @user.timecards.create(timecard_params)
       if @user.save
@@ -16,10 +23,18 @@ class TimecardsController < ApplicationController
     else
       raise IpAddressRejected
     end
+=end
   end
 
   def out
     @user = current_user
+    @user.timecards.create(timecard_params)
+    if @user.save
+      redirect_to root_path, notice: 'お疲れ様でした！'
+    else
+      redirect_to root_path, notice: '何かエラーが起こったようです...再度お試し下さい'
+    end
+=begin
     if request.remote_ip == "203.141.154.175" || request.remote_ip == "124.103.227.155"
       @user.timecards.create(timecard_params)
       if @user.save
@@ -30,6 +45,7 @@ class TimecardsController < ApplicationController
     else
       raise IpAddressRejected
     end
+=end
   end
 
   def show
