@@ -39,7 +39,7 @@
 
 ## 本家の最新のソースに追従する手順
 
-1. `git remote add upstream git@github.com:keisukefunatsu/student-management.git` を実行し、本家リポジトリをupstreamという名前のリモートリポジトリとして登録する。（最初の1回のみ）
+1. `git remote add upstream https://github.com/keisukefunatsu/student-management.git` を実行し、本家リポジトリをupstreamという名前のリモートリポジトリとして登録する。（最初の1回のみ）
 2. `git checkout master` を実行
 3. `git fetch upstream` を実行
 4. `git merge upstream/master` を実行
