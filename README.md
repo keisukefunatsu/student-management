@@ -15,18 +15,27 @@
 9. `config/database.yml` を自分の環境に合わせて編集する
 10. `bin/rake db:migrate` 実行
 11. `bin/rake db:seed` を実行してテストデータを作成
+12. `cp .env-sample .env` 実行
+12. `.env` ファイルを開き、`GOOGLE_CLIENT_ID`と`GOOGLE_CLIENT_SECRET`を設定
+  - 具体的な設定値は別途連絡します。
 12. `rails s` 実行
-13. http://0.0.0.0:3000 にアクセスしてページが開くことを確認
+13. http://localhost:3000 にアクセスしてページが開くことを確認
 14. `bin/rspec` を実行してテストが全部パスすることを確認
 
 ## ログイン方法
 
-テストユーザー用のログイン画面( http://0.0.0.0:3000/users/sign_in )からログインして下さい
+### メールアドレスによるログイン
+
+テストユーザー用のログイン画面( http://localhost:3000/users/sign_in )から、以下のいずれかのアカウントでログインしてください。
 
 - 管理者1: admin1@example.com / 11111111
 - 管理者2: admin2@example.com / 11111111
 - ユーザー1: user1@example.com / 11111111
 - ユーザー2～5: ユーザー1のメールアドレスにある1を2～5に変更する
+
+### Gmailアカウントによるログイン
+
+トップページ( http://localhost:3000/ )にある「Googleでサインイン」ボタンをクリックしてください。
 
 ## 本家の最新のソースに追従する手順
 
