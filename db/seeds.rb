@@ -41,6 +41,6 @@ end
 
 # 登下校時間の作成
 7.times.each.with_index(1) do |n|
-  Timecard.create(user_id: n,title:"下校時間")
-  Timecard.create(user_id: n,title:"登校時間")
+  Timecard.create(user_id: n,title:"下校時刻")
+  Timecard.create(user_id: n,title:"登校時刻")
 end
