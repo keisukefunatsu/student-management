@@ -9,6 +9,8 @@
 3. cd student-management
 4. `rbenv local 2.3.0` 実行（または 2.3系の任意のバージョンを指定）
   -  rbenvが入っていない人はこちら　→ [Homebrewのインストールとrbenvのインストールまで Mac編](http://qiita.com/issobero/items/e0443b79da117ed48294)
+5. `gem install bundler` 実行
+  - `bundler -v` で 1.12.5 以上がインストールされていることを確認
 6. `bundle install` 実行
   - PhantomJSが入っていない方はこちら → [Installing PhantomJS](https://github.com/teampoltergeist/poltergeist#installing-phantomjs)
 8. `cp config/database-sample.yml config/database.yml` 実行
