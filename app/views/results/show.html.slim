@@ -7,6 +7,8 @@ hr
   .panel.panel-info
     .panel-heading
       = e.updated_at.strftime('%Y年%m月%d日')
+      p.pull-right
+        = e.author.name
     .panel-body
       = e.title
       hr

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305161915) do
+ActiveRecord::Schema.define(version: 20160604042640) do
 
   create_table "information", force: :cascade do |t|
     t.string   "title",                   null: false
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20160305161915) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "author_id",  default: 0, null: false
   end
 
   create_table "tickets", force: :cascade do |t|
