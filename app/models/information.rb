@@ -7,6 +7,8 @@ class Information < ActiveRecord::Base
   validates :expire_date, presence: true
   validate :expire_date_should_be_before_start_date
 
+  paginates_per 5
+
   private
 
   def expire_date_should_be_before_start_date
