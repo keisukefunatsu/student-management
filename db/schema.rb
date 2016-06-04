@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604042640) do
+ActiveRecord::Schema.define(version: 20160604075414) do
 
   create_table "information", force: :cascade do |t|
     t.string   "title",                   null: false
@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(version: 20160604042640) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "author_id",  default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "author_id"
   end
+
+  add_index "results", ["author_id"], name: "index_results_on_author_id"
 
   create_table "tickets", force: :cascade do |t|
     t.integer  "user_id"
@@ -77,13 +79,14 @@ ActiveRecord::Schema.define(version: 20160604042640) do
     t.string   "name"
     t.string   "token"
     t.boolean  "admin",                  default: false, null: false
-    t.string   "grade"
     t.string   "school_name"
     t.string   "phone_number"
     t.boolean  "confirmed"
+    t.string   "grade_code"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["grade_code"], name: "index_users_on_grade_code"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -20,6 +20,7 @@ gem 'slim-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'puma'
+gem 'active_hash'
 
 group :development, :test do
   gem 'sqlite3'

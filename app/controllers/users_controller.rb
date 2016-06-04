@@ -30,7 +30,7 @@ before_action :admin_user, except: [:show]
 
   def user_params
     params.require(:user).permit(
-      :name,:grade, :school_name, :phone_number, :confirmed
+      :name, :grade_code, :school_name, :phone_number, :confirmed
     )
   end
 end
