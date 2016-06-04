@@ -4,6 +4,8 @@ class Timecard < ActiveRecord::Base
 
   belongs_to :user
 
+  validates :title, inclusion: { in: [COMING_TITLE, OUT_TITLE] }
+
   def coming?
     title == COMING_TITLE
   end

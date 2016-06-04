@@ -32,16 +32,10 @@ describe Timecard do
   end
 
   context "タイトルが想定外の場合" do
-    subject { create(:timecard, title: 'unexpected title') }
-    describe '#coming?' do
-      it 'falseを返す' do
-        expect(subject.coming?).to eq false
-      end
-    end
-
-    describe '#out?' do
-      it 'falseを返す' do
-        expect(subject.out?).to eq false
+    describe '#valid?' do
+      subject { Timecard.new(user: create(:user), title: 'unexpected title') }
+      it 'falseとなること' do
+        expect(subject.valid?).to eq false
       end
     end
   end
