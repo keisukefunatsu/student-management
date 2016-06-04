@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
   before_action :authenticate_user!
   before_action :confirmed_user
-  before_action :admin_user, except: [:show]
+  before_action :admin_user, except: [:index]
   PER = 4
   def new
     @user = User.find(params[:format])
@@ -19,13 +19,12 @@ class ResultsController < ApplicationController
     end
   end
 
-  def show
+  def index
     if current_user.admin?
-      @user = User.find(params[:id])
-      @result = @user.results.page(params[:page]).per(PER).order('created_at DESC')
+      @results = Result.all.page(params[:page]).per(PER).order('created_at DESC')
     else
       @user = current_user
-      @result = @user.results.page(params[:page]).per(PER).order('created_at DESC')
+      @results = @user.results.page(params[:page]).per(PER).order('created_at DESC')
     end
   end
 

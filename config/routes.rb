@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :results
+  resources :results , :except => [:show]
   resources :information
   resources :tickets
   resources :timecards
