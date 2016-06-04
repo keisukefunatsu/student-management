@@ -3,6 +3,8 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 # 使い方
 
+[![Join the chat at https://gitter.im/keisukefunatsu/student-management](https://badges.gitter.im/keisukefunatsu/student-management.svg)](https://gitter.im/keisukefunatsu/student-management?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## セットアップ
 1. このリポジトリを自分のアカウントへフォークする
 2. ローカルにgit cloneする
