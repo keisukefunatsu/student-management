@@ -1,21 +1,31 @@
 require 'rails_helper'
 
 describe Information do
-  describe '#update' do
-    let(:information) { create(:information, title: 'タイトル',
-                                             content: '内容',
-                                             start_date: Time.now + 2.hour,
-                                             expire_date: Time.now + 1.hour)}
-
-    context '開催日が現在日時より過去の場合' do
-      it 'エラーメッセージを返す' do
-        expect{information.update!(start_date: Time.now)}.to raise_error(ActiveRecord::RecordInvalid, include('開催日は現在時刻以降の値を設定してください'))
+  describe '#validation' do
+    context '開催日が現在日時以降かつ、申し込み期限が開催日時以前の場合' do
+      let(:information) { build(:information, start_date: 2.minute.since,
+                                              expire_date: 1.minute.since)}
+      it 'エラーが生じない' do
+        expect(information.valid?).to eq true
       end
     end
 
-    context '申し込み期限が開催日時より過去の日時の場合' do
+    context '開催日が現在日時より過去の場合' do
+      let(:information) { build(:information, start_date: 1.minute.ago,
+                                              expire_date: 2.minute.ago)}
       it 'エラーメッセージを返す' do
-        expect{information.update!(expire_date: information.start_date + 1.second)}.to raise_error(ActiveRecord::RecordInvalid, 'バリデーションに失敗しました: 申し込み期限は開催日時以前の値を設定してください')
+        expect(information.valid?).to eq false
+        expect(information.errors.full_messages).to include('開催日は現在時刻以降の値を設定してください')
+      end
+    end
+
+    context '申し込み期限が開催日時より未来の日時の場合' do
+      let(:information) { build(:information, start_date: '2016-06-04 16:00'.in_time_zone,
+                                              expire_date: '2016-06-04 16:01'.in_time_zone)}
+
+      it 'エラーメッセージを返す' do
+        expect(information.valid?).to eq false
+        expect(information.errors.full_messages).to include('申し込み期限は開催日時以前の値を設定してください')
       end
     end
   end
