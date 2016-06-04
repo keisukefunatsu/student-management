@@ -38,7 +38,6 @@ report =   "今回の指導科目は英語：テキスト20p\n社会:テキス�
 
 admins = User.where(admin: true)
 user_ids.each do |n|
-    #id = admins[n % 2]
   Result.create!(user_id: n,title:"#{Date.today}指導報告", content:report, author_id: admins[n % 2].id)
 end
 
