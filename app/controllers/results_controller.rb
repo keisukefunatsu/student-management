@@ -22,6 +22,9 @@ class ResultsController < ApplicationController
   def index
     if current_user.admin?
       @results = Result.all.page(params[:page]).per(PER).order('created_at DESC')
+      if params[:user_id]
+        @results = @results.where(user_id: params[:user_id])
+      end
     else
       @user = current_user
       @results = @user.results.page(params[:page]).per(PER).order('created_at DESC')
