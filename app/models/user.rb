@@ -23,6 +23,6 @@ class User < ActiveRecord::Base
   end
 
   def recent_timecard
-    timecards.order(created_at: :desc).limit(1).first
+    timecards.order(created_at: :desc).first
   end
 end
