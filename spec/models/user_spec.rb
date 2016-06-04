@@ -1,6 +1,43 @@
 require 'rails_helper'
 
 describe User do
+  describe '#increase_grade' do
+    context '学年がある場合' do
+      subject { create(:user, :student) }
+      it '次の学年に更新されている' do
+        expected = subject.grade.next_grade_code
+        subject.increase_grade
+        expect(subject.grade_code).to eq expected
+      end
+    end
+
+    context '学年がない場合' do
+      subject { create(:user) }
+      it '学年が更新されない' do
+        subject.increase_grade
+        expect(subject.grade_code).to be_nil
+      end
+    end
+  end
+
+  describe '#increase_grade!' do
+    context '学年がある場合' do
+      subject { create(:user, :student) }
+      it '次の学年に更新されている' do
+        expected = subject.grade.next_grade_code
+        subject.increase_grade!
+        expect(subject.grade_code).to eq expected
+      end
+    end
+
+    context '学年がない場合' do
+      subject { create(:user) }
+      it 'エラーが発生する' do
+        expect{subject.increase_grade!}.to raise_error '学年が設定されていません'
+      end
+    end
+  end
+
   describe '#recent_timecard' do
     subject { create(:user) }
     before do

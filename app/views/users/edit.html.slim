@@ -15,7 +15,7 @@
 
   .form-group
     = f.label '学年'
-    = f.select(:grade, ["中１","中2","中3","高１","高2","高3"], {class: 'form-control'} )
+    = f.select(:grade_code, Grade.all.map { |g| [g.name, g.code] }, {class: 'form-control'} )
   .form-group
     = f.label '氏名'
     = f.text_field :name, class: 'form-control',row: 10,placeholder:'船津圭佑'
