@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :results, :dependent => :delete_all
+  has_many :report_results, :class_name => Result, :foreign_key => :author_id
   has_many :tickets, :dependent => :delete_all
   has_many :timecards, :dependent => :delete_all
   has_many :information
