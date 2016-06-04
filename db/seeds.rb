@@ -8,12 +8,12 @@
 
 # 管理者ユーザの作成
 ["鈴木(管理者)","近藤(管理者)"].each.with_index(1) do |name, n|
-  User.create(email:"admin#{n}@example.com",password:'11111111',name: name ,admin: true, confirmed: true)
+  User.create!(email:"admin#{n}@example.com",password:'11111111',name: name ,admin: true, confirmed: true)
 end
 
 # 一般ユーザの作成
 ["大久保","大西","田中","橘","駒田"].each.with_index(1) do |name, n|
-  User.create(email:"user#{n}@example.com",password:'11111111',name: name, admin: false, confirmed: true)
+  User.create!(email:"user#{n}@example.com",password:'11111111',name: name, admin: false, confirmed: true)
 end
 
 # お知らせの作成
@@ -22,14 +22,14 @@ def sample_date(number)
 end
 
 ['カレー','焼き肉','受験お疲れ様','うどん','たこ焼き'].each.with_index(1) do |subject, n|
-  Information.create(title:"お知らせ#{n}", expire_date: sample_date(n), start_date: sample_date(n+1),content:"#{subject}パーティをします。奮ってご参加下さい！！", participate: true)
+  Information.create!(title:"お知らせ#{n}", expire_date: sample_date(n), start_date: sample_date(n+1),content:"#{subject}パーティをします。奮ってご参加下さい！！", participate: true)
 end
 
 user_ids = User.pluck(:id)
 
 # イベントへの参加
 user_ids.each do |n|
-  Ticket.create(user_id: n, information_id: Information.pluck(:id).sample, comment: "参加します！")
+  Ticket.create!(user_id: n, information_id: Information.pluck(:id).sample, comment: "参加します！")
 end
 
 
@@ -38,11 +38,11 @@ report =   "今回の指導科目は英語：テキスト20p\n社会:テキス�
 
 admins = User.where(admin: true)
 user_ids.each do |n|
-  Result.create(user_id: n,title:"#{Date.today}指導報告", content:report, author_id:admins[n % 2])
+  Result.create!(user_id: n,title:"#{Date.today}指導報告", content:report, author_id: admins[n % 2].id)
 end
 
 # 登下校時間の作成
 user_ids.each do |n|
-  Timecard.create(user_id: n,title:"下校時刻")
-  Timecard.create(user_id: n,title:"登校時刻")
+  Timecard.create!(user_id: n,title:"下校時刻")
+  Timecard.create!(user_id: n,title:"登校時刻")
 end
