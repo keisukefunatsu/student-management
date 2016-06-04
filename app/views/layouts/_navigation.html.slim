@@ -21,12 +21,14 @@ header.navbar.navbar-default[role="navigation"]
           li.navbar-text.text-muted
             = current_user.name
         - if current_user
-          = form_for current_user.timecards.build, html:{class: 'navbar-form navbar-left'}, url: {controller: :timecards, action: :come} do |f|
-            = f.hidden_field :title, :value => '登校時刻',class:'form-group'
-            = f.button '登校', class: 'btn btn-default', data: {disable_with:'処理中です....'}
-          = form_for current_user.timecards.build, html:{class: 'navbar-form navbar-left'}, url: {controller:  :timecards, action: :out} do |f|
-            = f.hidden_field :title, :value => '下校時刻',class:'form-group'
-            = f.button '下校', class: 'btn btn-default', data: {disable_with:'処理中です....'}
+          - if current_user.recent_timecard.nil? || current_user.recent_timecard.out?
+            = form_for current_user.timecards.build, html:{class: 'navbar-form navbar-left'}, url: {controller: :timecards, action: :come} do |f|
+              = f.hidden_field :title, value: Timecard::COMING_TITLE, class:'form-group'
+              = f.button '登校', class: 'btn btn-default', data: {disable_with:'処理中です....'}
+          - if current_user.recent_timecard.nil? || current_user.recent_timecard.coming?
+            = form_for current_user.timecards.build, html:{class: 'navbar-form navbar-left'}, url: {controller:  :timecards, action: :out} do |f|
+              = f.hidden_field :title, value: Timecard::OUT_TITLE, class:'form-group'
+              = f.button '下校', class: 'btn btn-default', data: {disable_with:'処理中です....'}
           li
             = link_to 'ログアウト', logout_path
         - else

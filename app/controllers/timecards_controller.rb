@@ -5,9 +5,7 @@ class TimecardsController < ApplicationController
   PER = 5
 
   def come
-    @user = current_user
-    @user.timecards.create(timecard_params)
-    if @user.save
+    if current_user.recent_timecard.out? && current_user.timecards.build(timecard_params).save
       redirect_to root_path, notice: 'こんにちは！今日も張り切っていきましょう！'
     else
       redirect_to root_path, notice: '何かエラーが起こったようです...再度お試し下さい'
@@ -27,9 +25,7 @@ class TimecardsController < ApplicationController
   end
 
   def out
-    @user = current_user
-    @user.timecards.create(timecard_params)
-    if @user.save
+    if current_user.recent_timecard.coming? && current_user.timecards.build(timecard_params).save
       redirect_to root_path, notice: 'お疲れ様でした！'
     else
       redirect_to root_path, notice: '何かエラーが起こったようです...再度お試し下さい'

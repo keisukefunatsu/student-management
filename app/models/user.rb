@@ -22,4 +22,7 @@ class User < ActiveRecord::Base
     user
   end
 
+  def recent_timecard
+    timecards.order(created_at: :desc).limit(1).first
+  end
 end
