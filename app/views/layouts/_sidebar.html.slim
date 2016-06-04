@@ -3,35 +3,25 @@ p.text-muted
   |      
   = current_user.name
 ul.nav.nav-pills.nav-stacked
-  |  <li class="
-  = active?("home","information")
-  |  ">
-  = link_to root_path, class:'' do
-    i.zmdi.zmdi-info-outline.zmdi-hc-2x
-    |     お知らせ
-  |  <li class="
-  = active?("results")
-  |  ">
-  = link_to result_path(current_user), class: '' do
-    i.zmdi.zmdi-file-text.zmdi-hc-2x
-    |     指導報告
-  |  <li class="
-  = active?("tickets")
-  |  ">
-  = link_to  ticket_path(current_user) , class: '' do
-    i.zmdi.zmdi-edit.zmdi-hc-2x
-    |     申込中イベント
-    span.badge
-      = registered_tickets
-  |  <li class="
-  = active?("timecards")
-  |  ">
-  = link_to  timecard_path(current_user) , class: '' do
-    i.zmdi.zmdi-alarm.zmdi-hc-2x
-    |     登下校時間
-  |  <li class="
-  = active?("users")
-  |  ">
-  = link_to  user_path(current_user) , class: '' do
-    i.zmdi.zmdi-lock-outline.zmdi-hc-2x
-    |     登録情報
+  li class=(active?('home','information'))
+    = link_to root_path, class:'' do
+      i.zmdi.zmdi-info-outline.zmdi-hc-2x
+      |     お知らせ
+  li class=(active?('results'))
+    = link_to result_path(current_user), class: '' do
+      i.zmdi.zmdi-file-text.zmdi-hc-2x
+      |     指導報告
+  li class=(active?('tickets'))
+    = link_to  ticket_path(current_user) , class: '' do
+      i.zmdi.zmdi-edit.zmdi-hc-2x
+      |     申込中イベント
+      span.badge
+        = registered_tickets
+  li class=(active?('timecards'))
+    = link_to  timecard_path(current_user) , class: '' do
+      i.zmdi.zmdi-alarm.zmdi-hc-2x
+      |     登下校時間
+  li class=(active?('users'))
+    = link_to  user_path(current_user) , class: '' do
+      i.zmdi.zmdi-lock-outline.zmdi-hc-2x
+      |     登録情報
