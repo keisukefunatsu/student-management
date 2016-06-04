@@ -20,8 +20,8 @@ describe Information do
     end
 
     context '申し込み期限が開催日時より未来の日時の場合' do
-      let(:information) { build(:information, start_date: '2016-06-04 16:00'.in_time_zone,
-                                              expire_date: '2016-06-04 16:01'.in_time_zone)}
+      let(:information) { build(:information, start_date: 1.minute.since,
+                                              expire_date: 2.minute.since)}
 
       it 'エラーメッセージを返す' do
         expect(information.valid?).to eq false
