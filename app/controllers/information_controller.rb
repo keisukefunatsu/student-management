@@ -4,7 +4,7 @@ class InformationController < ApplicationController
   before_action :admin_user, except: [:show]
 
   def new
-    @info = Information.new
+    @info = Information.new(start_date: 1.week.since, expire_date: 6.days.since)
   end
 
   def create
@@ -38,7 +38,7 @@ class InformationController < ApplicationController
   def show
     @info = Information.find(params[:id])
   end
-  
+
   private
 
   def info_params
