@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 describe User do
-  # RSpecの動作確認用なので削除して良い
-  example do
-    user = create :user
-    expect(user).to be_valid
+  describe '#recent_timecard' do
+    subject { create(:user) }
+    before do
+      10.times { create(:timecard, user: subject) }
+    end
+
+    it '最新のタイムカードを返す' do
+      last_timecard = Timecard.where(user: subject).order(created_at: :desc).first
+      expect(subject.recent_timecard).to eq last_timecard
+    end
   end
 end
