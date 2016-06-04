@@ -44,6 +44,7 @@ group :test do
   gem "launchy", "~> 2.4"
   gem "selenium-webdriver", "~> 2.43.0"
   gem 'poltergeist', '~> 1.9'
+  gem 'timecop'
 end
 
 group :production do

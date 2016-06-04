@@ -23,5 +23,5 @@
       = f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1
     .form-group
       = f.label '参加するか尋ねる'
-      = f.check_box :participate,{checked: true}
+      = f.check_box :participate
     = f.submit '更新',class: 'btn btn-default', data: {disable_with:'更新しています...'}
