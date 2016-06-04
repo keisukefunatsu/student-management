@@ -11,6 +11,7 @@ class ResultsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @result = @user.results.create(result_params)
+    @result.author = current_user
     if @result.save
       redirect_to result_path(@user), notice: '指導報告を作成しました。'
     else

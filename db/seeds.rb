@@ -25,22 +25,24 @@ end
   Information.create(title:"お知らせ#{n}", expire_date: sample_date(n), start_date: sample_date(n+1),content:"#{subject}パーティをします。奮ってご参加下さい！！", participate: true)
 end
 
+user_ids = User.pluck(:id)
 
 # イベントへの参加
-7.times.each.with_index(1) do |n|
-  Ticket.create(user_id: n, information_id: n, comment: "参加します！")
+user_ids.each do |n|
+  Ticket.create(user_id: n, information_id: Information.pluck(:id).sample, comment: "参加します！")
 end
 
 
 # 指導報告の作成
 report =   "今回の指導科目は英語：テキスト20p\n社会:テキスト15p\n前回のテスト結果\n英語:80\n 数学90\n 国語70\n 理科50\n 社会45\n理科、社会が弱いので次の講師は重点的に指導をお願いします。\n"
 
-7.times.each.with_index(1) do |n|
-  Result.create(user_id: n,title:"#{Date.today}指導報告", content:report)
+admins = User.where(admin: true)
+user_ids.each do |n|
+  Result.create(user_id: n,title:"#{Date.today}指導報告", content:report, author_id:admins[n % 2])
 end
 
 # 登下校時間の作成
-7.times.each.with_index(1) do |n|
-  Timecard.create(user_id: n,title:"下校時間")
-  Timecard.create(user_id: n,title:"登校時間")
+user_ids.each do |n|
+  Timecard.create(user_id: n,title:"下校時刻")
+  Timecard.create(user_id: n,title:"登校時刻")
 end

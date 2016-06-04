@@ -19,6 +19,7 @@ gem 'html2slim'
 gem 'slim-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'puma'
 
 group :development, :test do
   gem 'sqlite3'

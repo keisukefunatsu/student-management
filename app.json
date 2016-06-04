@@ -1,0 +1,6 @@
+{
+  "name" : "student-management" ,
+  "scripts" : {
+     "postdeploy" : "bundle exec rake db:setup"
+  }
+}
