@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 feature 'お知らせ新規作成/編集' do
-  let!(:admin_user){ FactoryGirl.create(:admin_user) }
+  let!(:admin_user){ FactoryGirl.create(:user, :admin_user) }
 
   before do
     visit new_user_session_path
-    fill_in 'Email', with: 'admin@example.com'
+    fill_in 'Email', with: admin_user.email
     fill_in 'Password', with: '00000000'
     click_button 'Log in'
   end
