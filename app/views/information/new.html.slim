@@ -1,27 +1,4 @@
-- now = Time.zone.now
 .page-header
   h1
     | お知らせ編集
-= form_for(@info, class: 'form-horizontal', role: 'form') do |f|
-  - if @info.errors.any?
-    .alert.alert-danger
-      ul
-        - @info.errors.full_messages.each do |msg|
-          li
-            = msg
-  .form-group
-    = f.label 'タイトル'
-    = f.text_field :title, class: 'form-control'
-  .form-group
-    = f.label '内容'
-    = f.text_area :content, class: 'form-control',row: 10
-  .form-group
-    = f.label '開催日'
-    = f.datetime_select :start_date, start_year: now.year, end_year: now.year + 1
-  .form-group
-    = f.label '申し込み期限'
-    = f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1
-  .form-group
-    = f.label '参加するか尋ねる'
-    = f.check_box :participate
-  = f.submit '作成',class: 'btn btn-default', data: {disable_with:'更新しています...'}
+= render 'form'
