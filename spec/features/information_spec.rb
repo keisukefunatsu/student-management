@@ -11,24 +11,24 @@ feature 'お知らせ新規作成' do
   context '参加するか尋ねるがonの場合' do
     scenario '再度編集画面を表示するとonになっていること' do
       visit new_information_path
-      fill_in 'information[title]', with: 'タイトルテスト'
-      fill_in 'information[content]', with: '内容テスト'
-      check 'information[participate]'
+      fill_in 'タイトル', with: 'タイトルテスト'
+      fill_in '内容', with: '内容テスト'
+      check '参加するか尋ねる'
       click_button '作成'
       visit edit_information_path(Information.last.id)
-      expect(page).to have_checked_field('information[participate]')
+      expect(page).to have_checked_field('参加するか尋ねる')
     end
   end
 
   context '参加するか尋ねるがoffの場合' do
     scenario '再度編集画面を表示するとoffになっていること' do
       visit new_information_path
-      fill_in 'information[title]', with: 'タイトルテスト'
-      fill_in 'information[content]', with: '内容テスト'
-      uncheck 'information[participate]'
+      fill_in 'タイトル', with: 'タイトルテスト'
+      fill_in '内容', with: '内容テスト'
+      uncheck '参加するか尋ねる'
       click_button '作成'
       visit edit_information_path(Information.last.id)
-      expect(page).to have_unchecked_field('information[participate]')
+      expect(page).to have_unchecked_field('参加するか尋ねる')
     end
   end
 end
@@ -46,20 +46,20 @@ feature 'お知らせ編集' do
   context '参加するか尋ねるがonの場合' do
     scenario '再度編集画面を表示するとonになっていること' do
       visit edit_information_path(information.id)
-      check 'information[participate]'
+      check '参加するか尋ねる'
       click_button '更新'
       visit edit_information_path(information.id)
-      expect(page).to have_checked_field('information[participate]')
+      expect(page).to have_checked_field('参加するか尋ねる')
     end
   end
 
   context '参加するか尋ねるがoffの場合' do
     scenario '再度編集画面を表示するとoffになっていること' do
       visit edit_information_path(information.id)
-      uncheck 'information[participate]'
+      uncheck '参加するか尋ねる'
       click_button '更新'
       visit edit_information_path(information.id)
-      expect(page).to have_unchecked_field('information[participate]')
+      expect(page).to have_unchecked_field('参加するか尋ねる')
     end
   end
 end
