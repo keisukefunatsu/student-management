@@ -4,10 +4,7 @@ feature 'お知らせ新規作成/編集' do
   let!(:admin_user){ FactoryGirl.create(:user, :as_admin) }
 
   before do
-    visit new_user_session_path
-    fill_in 'Email', with: admin_user.email
-    fill_in 'Password', with: '00000000'
-    click_button 'Log in'
+    sign_in admin_user
   end
 
   scenario '「参加するか尋ねる」をonにして更新すると再度訪問時onが表示され、offにして更新すると再度訪問時offになっていること' do
