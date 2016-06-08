@@ -7,7 +7,7 @@ FactoryGirl.define do
     password 'secret1234'
     password_confirmation { password }
 
-    trait :admin_user do
+    trait :as_admin do
       email 'admin@example.com'
       password '00000000'
       password_confirmation { password }
