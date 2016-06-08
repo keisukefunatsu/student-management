@@ -18,12 +18,12 @@ feature 'お知らせ新規作成/編集' do
     click_button '作成'
 
     information = Information.last
-    visit edit_information_path(information.id)
+    visit edit_information_path(information)
     expect(page).to have_checked_field('参加するか尋ねる')
 
     uncheck '参加するか尋ねる'
     click_button '更新'
-    visit edit_information_path(information.id)
+    visit edit_information_path(information)
     expect(page).to have_unchecked_field('参加するか尋ねる')
   end
 end
