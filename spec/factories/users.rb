@@ -9,8 +9,6 @@ FactoryGirl.define do
 
     trait :as_admin do
       email 'admin@example.com'
-      password '00000000'
-      password_confirmation { password }
       admin true
       confirmed true
     end
