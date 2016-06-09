@@ -1,0 +1,25 @@
+- now = Time.zone.now 
+= form_for(@info, class: 'form-horizontal', role: 'form') do |f|
+  - if @info.errors.any?
+    .alert.alert-danger
+      ul
+        - @info.errors.full_messages.each do |msg|
+          li
+            = msg
+  .form-group
+    = f.label :title, 'タイトル'
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :content, '内容'
+    = f.text_area :content, class: 'form-control',row: 10
+  .form-group
+    = f.label :start_date, '開催日'
+    = f.datetime_select :start_date, start_year: now.year, end_year: now.year + 1
+  .form-group
+    = f.label :expire_date, '申し込み期限'
+    = f.datetime_select :expire_date, start_year: now.year, end_year: now.year + 1
+  .form-group
+    = f.label :participate do
+      => f.check_box :participate
+      | 参加するか尋ねる
+  = f.submit class: 'btn btn-default', data: {disable_with:'更新しています...'}
