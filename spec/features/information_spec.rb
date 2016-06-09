@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'お知らせ新規作成/編集' do
-  let!(:admin_user){ FactoryGirl.create(:user, :as_admin) }
+  let!(:admin_user){ create(:user, :as_admin) }
 
   before do
     sign_in admin_user
