@@ -13,7 +13,7 @@ end
 
 # 一般ユーザの作成
 ["大久保","大西","田中","橘","駒田"].each.with_index(1) do |name, n|
-  User.create!(email:"user#{n}@example.com",password:'11111111',name: name, admin: false, confirmed: true, current_sign_in_at: Time.zone.now )
+  User.create!(email:"user#{n}@example.com",password:'11111111',name: name, admin: false, confirmed: true, current_sign_in_at: Time.zone.now - 1.day )
 end
 
 # お知らせの作成
