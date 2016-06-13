@@ -1,0 +1,21 @@
+h1
+  | 指導報告
+hr
+= paginate @results
+- @results.each do |r|
+  .panel.panel-info
+    .panel-heading
+      = r.updated_at.strftime('%Y年%m月%d日')
+      p.pull-right
+        = r.author.name
+    .panel-body
+      = r.title
+      hr
+      = r.content
+      - if current_user.admin?
+        br
+        hr
+        = link_to '編集', edit_result_path(r),class: 'btn btn-success'
+        = link_to '削除', result_path(r),class: 'btn btn-danger',method: :delete, data: {confirm: '本当に削除しますか？'}
+- unless @results.first
+  |  指導報告はありません 
