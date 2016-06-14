@@ -5,7 +5,6 @@ class Result < ActiveRecord::Base
   validates :content, length: { maximum: 2000 }, presence: true
   validates :author_id, presence: true
 
-
   paginates_per 10
 
 end

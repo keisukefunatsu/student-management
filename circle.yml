@@ -3,3 +3,7 @@ deployment:
     branch: master
     heroku:
       appname: secure-mesa-72264
+  production:
+    branch: release
+    heroku:
+      appname: commit-app-production
