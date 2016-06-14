@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :information
   has_many :participating_events, through: :tickets, source: :information
 
+  paginates_per 10
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable

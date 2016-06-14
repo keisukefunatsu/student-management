@@ -8,7 +8,7 @@ class Information < ActiveRecord::Base
   validate :validate_start_date
   validate :validate_expire_date
 
-  paginates_per 5
+  paginates_per 10
 
   private
   def validate_start_date
