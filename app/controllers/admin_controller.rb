@@ -2,9 +2,8 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_user, except: [:show]
 
-  PER = 5
   def index
-    @user = User.page(params[:page]).per(PER).all
+    @user = User.page(params[:page])
   end
 
   def show
